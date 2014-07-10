@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Symphian::Application.config.secret_key_base = 'eb6fe39eadf62d4ce933791e2efb7f0fb7cc531d285dc981f43aec9eb7fe32a14b4f398e13dbae0983e1392b28601f8154a68937755fb28c72530c71552d28b7'
+requre 'securerandom'
+
+Symphian::Application.config.secret_key_base = secure_token
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	
+	if File.exist?(token_file)
+		File.read(token_file).chomp
+	else
+		#Generate a random token and save for later use
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+
