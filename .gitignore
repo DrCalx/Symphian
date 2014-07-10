@@ -14,3 +14,15 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore local db config files
+database.yml
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+
+# Keep cookie secure key secret
+.secret
