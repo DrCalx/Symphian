@@ -12,8 +12,44 @@ Many of the gems used are the same ones covered in the {Rails Tutorial}[www.rail
 * Database
 
 Using SQLite3 for development database.
-Production version uses 
 
-<h2>Testing</h2>
+<h2>pre-Alpha ground zero requirement</h2>
+* User can be created
+* User can sign in
+* Group can be created
+* Group can specify what Positions are needed
+* Positions have one Instrument
+* User can specify what Instrument can be played
+* User has zip code
+* Group has zip code
+* User can be Member of Group
 
-bundle exec rspec
+<h2>Rules</h2>
+
+* Create branch for each project going in
+* In that branch, state the main workflow to be implemented in a readme file
+* Create failing RSpec Tests to match workflows
+* Commit early, commit often
+
+<h2>Vague workflows</h2>
+
+<h3>Near term</h3>
+* Log in via Google / Facebook / Twitter
+* Search can be done for Users / Groups within specific zip codes
+* User / Group can specify specific address
+* User will see local groups needing users talent
+* Performances
+* Venues
+* Dates
+* Styles
+* What happens with Groups that have no Members?
+* Group manager User role(restrict adding users / performances etc.)
+
+<h3>Long term</h3>
+* Samples (via Soundcloud)
+* Posters (with tag)
+
+<h3>Way out there</h3>
+* Phone application (scanning tags)
+* Following groups and getting updates on Performances
+* 
