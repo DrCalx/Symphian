@@ -44,12 +44,12 @@ Using SQLite3 for development database.
 * Styles
 * What happens with Groups that have no Members?
 * Group manager User role(restrict adding users / performances etc.)
+* What happens if a User is a solo Group? Still need to distinguish?
 
 <h3>Long term</h3>
 * Samples (via Soundcloud)
 * Posters (with tag)
 
 <h3>Way out there</h3>
-* Phone application (scanning tags)
+* Phone application (scanning tags, location aware)
 * Following groups and getting updates on Performances
-* 

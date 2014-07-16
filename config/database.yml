@@ -10,12 +10,14 @@ development:
 
 test:
   adapter: postgresql
-  database: db/symphian_test
+  database: symphian_test
   pool: 5
   timeout: 5000
+  username: postgres
+  password: Pluto64Post
 
-production:
-  adapter: postgresql
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+# production:
+#   adapter: postgresql
+#   database: db/production.sqlite3
+#   pool: 5
+#   timeout: 5000
