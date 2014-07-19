@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Symphian</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+	  <title>Symphian</title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="navbar-brand">
+					<%= link_to "symphian", '#', id: "logo" %>
+				</div>
+				<nav>
+					<ul class="nav pull-right">
+						<li><%= link_to "Home", '#' %></li>
+						<li><%= link_to "About", '#' %></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="container">
+			<%= yield %>
+		</div>
+		<footer class="footer">
+			<small>This site is being worked on</small>
+			<nav>
+				<ul>
+					<li><%= link_to "Home", '#' %></li>
+					<li><%= link_to "About", '#' %></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
 </html>
