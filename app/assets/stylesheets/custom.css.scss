@@ -29,8 +29,12 @@ h2 {
 }
 
 #logo {
+	float: left;
 	font-size: 1.7em;
 	text-transform: capitalize;
+	color: #42A382;
+	padding-top: 9px;
+	margin-right: 10px;
 	line-height: 1;
 }
 
