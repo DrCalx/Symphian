@@ -6,10 +6,13 @@ class User < ActiveRecord::Base
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i #This isn't really good enough... but it'll do for now
 	validates :email, presence: true, 
 										format: { with: EMAIL_REGEX },
-										uniqueness: true
+										uniqueness: { case_sensitive: false}
 
 	has_many :memberships, dependent: :destroy
 	has_many :groups, through: :memberships
+
+	has_secure_password #Thanks Rails!
+	validates :password, length: { minimum: 6 }
 
 	def sign_with!(group)
 		self.memberships.create!(group.id)
