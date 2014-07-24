@@ -1,6 +1,13 @@
 class User < ActiveRecord::Base
-	validates :name, presence: true
-	validates :email, presence: true
+	before_save { self.email = email.downcase }
+	validates :name, 	presence: true, 
+										length: { maximum: 50 }
+
+	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i #This isn't really good enough... but it'll do for now
+	validates :email, presence: true, 
+										format: { with: EMAIL_REGEX },
+										uniqueness: true
+
 	has_many :memberships, dependent: :destroy
 	has_many :groups, through: :memberships
 

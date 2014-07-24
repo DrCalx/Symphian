@@ -20,4 +20,18 @@ describe User do
 		before { @user.email = " " }
 		it { should_not be_valid }
 	end
+
+	describe "with a name that is too long" do
+		before { @user.name = 'a'*51 }
+		it { should_not be_valid }
+	end
+
+	describe "with an email that is already used" do
+		before do
+			dup_user = @user.dup
+			dup_user.save
+		end
+
+		it { should_not be_valid }
+	end
 end
