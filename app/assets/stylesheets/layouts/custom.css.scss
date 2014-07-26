@@ -1,24 +1,25 @@
+$brand-primary: #704D4D;
+
+$btn-primary-bg: #704D4D;
+$btn-primary-color: #704D4D;
+$btn-primary-border: #704D4D;
+
+$btn-default-bg: #704D4D;
+$btn-default-color: #704D4D;
+$btn-default-border: #704D4D;
+
 @import "bootstrap";
 
-body {
-	padding-top: 70px;
-}
+$brand-primary: #704D4D;
 
-h1, h2{
-	line-height:1;
-}
+$btn-primary-bg: #704D4D;
+$btn-primary-color: #704D4D;
+$btn-primary-border: #704D4D;
 
-h1 {
-	font-size: 3em;
-	letter-spacing: -2px;
-	text-align: center;
-	margin-bottom: 30px;
-}
+$btn-default-bg: #704D4D;
+$btn-default-color: #704D4D;
+$btn-default-border: #704D4D;
 
-h2 {
-	color: #999;
-	text-align: center;
-}
 
 .center {
 	text-align: center;
@@ -32,34 +33,22 @@ h2 {
 	float: left;
 	font-size: 1.7em;
 	text-transform: capitalize;
-	color: #42A382;
+	color: $brand-primary;
 	padding-top: 9px;
 	margin-right: 10px;
 	line-height: 1;
+	letter-spacing: -1px;
+	font-weight: bold;
 }
 
-footer {
-	border-top: 1px solid #eaeaea;
+html {
+	overflow-y: scroll;
 }
 
-footer a{
-	color:#555;
+section {
+	overflow: auto;
 }
 
-footer a:hover {
-	color: #222;
-}
-
-footer small {
-	float: left;
-}
-
-footer ul {
-	float: right;
-	list-style: none;
-}
-
-footer ul li {
-	float: left;
-	margin-left: 10px;
+textarea {
+	resize: vertical;
 }
