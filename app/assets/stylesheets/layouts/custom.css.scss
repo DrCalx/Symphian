@@ -1,44 +1,14 @@
-$brand-primary: #704D4D;
+$brand-primary: #3366CC;
 
-$btn-primary-bg: #704D4D;
-$btn-primary-color: #704D4D;
-$btn-primary-border: #704D4D;
-
-$btn-default-bg: #704D4D;
-$btn-default-color: #704D4D;
-$btn-default-border: #704D4D;
-
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
-$brand-primary: #704D4D;
+@import "body";
+@import "footer";
+@import "header";
 
-$btn-primary-bg: #704D4D;
-$btn-primary-color: #704D4D;
-$btn-primary-border: #704D4D;
-
-$btn-default-bg: #704D4D;
-$btn-default-color: #704D4D;
-$btn-default-border: #704D4D;
-
-
-.center {
-	text-align: center;
-}
-
-.center h1 {
-	margin-bottom: 10px;
-}
-
-#logo {
-	float: left;
-	font-size: 1.7em;
-	text-transform: capitalize;
-	color: $brand-primary;
-	padding-top: 9px;
-	margin-right: 10px;
-	line-height: 1;
-	letter-spacing: -1px;
-	font-weight: bold;
+nav {
+	box-shadow: 0px 0px 10px #888
 }
 
 html {
@@ -51,4 +21,19 @@ section {
 
 textarea {
 	resize: vertical;
+}
+
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	text-transform: capitalize;
+	color: $brand-primary;
+	padding-top: 9px;
+	line-height: 1;
+	letter-spacing: -1px;
+	font-weight: bold;
+	&:hover {
+		text-decoration:none;
+	}
 }
