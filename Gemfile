@@ -8,9 +8,9 @@ ruby '1.9.3'
 gem 'rails', 	'4.0.8'
 gem 'pg', 		'0.15.1'
 
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'sass-rails', 		'>= 4.0.1'
-gem 'sprockets', '>= 2.11.0'
+gem 'bootstrap-sass', '~> 3.1.0'
+gem 'sass-rails', 		'~> 4.0.0'
+gem 'sprockets', '2.11.0'
 
 gem 'bcrypt-ruby', '3.1.2'
 
