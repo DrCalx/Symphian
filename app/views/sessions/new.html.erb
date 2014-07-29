@@ -1,0 +1,13 @@
+<% provide :title, 'Sign in' %>
+<h1>The Signin Page</h1>
+<%= form_for(:session, url: sessions_path ) do |f| %>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.submit "Sign in" %>
+<% end %>
+
+<p>New to Symphian? <%= link_to "Sign up here", signup_path %></p>
