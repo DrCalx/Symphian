@@ -1,13 +1,17 @@
 <% provide :title, 'Sign in' %>
-<h1>The Signin Page</h1>
-<%= form_for(:session, url: sessions_path ) do |f| %>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
+<div class="row">
+	<div class="col-xs-6 col-md-offset-3">
+		<h1>The Signin Page</h1>
+		<%= form_for(:session, url: sessions_path ) do |f| %>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
 
-	<%= f.label :password %>
-	<%= f.password_field :password %>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
 
-	<%= f.submit "Sign in" %>
-<% end %>
+			<%= f.submit "Sign in", class: "btn btn-primary"%>
+		<% end %>
 
-<p>New to Symphian? <%= link_to "Sign up here", signup_path %></p>
+		<p>New to Symphian? <%= link_to "Sign up here", signup_path %></p>
+	</div>
+</div>
