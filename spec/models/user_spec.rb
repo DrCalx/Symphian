@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe User do
 	
-	before { @user = User.new(name:"Test User", email: "user@test.com",
-														password: "pass123", password_confirmation: "pass123") }
+	before { @user = User.new(name:"Test User", 
+														email: "user@test.com",
+														password: "pass123", 
+														password_confirmation: "pass123") }
 
 	subject { @user }
 
@@ -67,5 +69,10 @@ describe User do
 			it { should_not eq user_with_invalid_password }
 			specify { expect(user_with_invalid_password).to be_false }
 		end
+	end
+
+	describe "remember token" do
+		before { @user.save }
+		its(:remember_token) { should_not be_blank }
 	end
 end

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	before_create { create_remember_token }
 	before_save { self.email = email.downcase }
 	validates :name, 	presence: true, 
 										length: { maximum: 50 }
@@ -24,5 +25,18 @@ class User < ActiveRecord::Base
 
 	def unsign_with!(group)
 		self.memberships.find_by(group.id).destroy
+	end
+
+	def User.new_remember_token
+		SecureRandom.urlsafe_base64 #Create a random token as a cookie
+	end
+
+	def User.digest(token)
+		Digest::SHA1.hexdigest(token.to_s) #Hash the token so no one can steal it from the db
+	end
+
+	private
+	def create_remember_token
+		self.remember_token = User.digest(User.new_remember_token)
 	end
 end
