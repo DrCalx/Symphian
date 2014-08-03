@@ -1,3 +1,20 @@
 <% provide(:title, @user.name) %>
-<h1>Welcome back, <%= @user.name %></h1>
-<h2>You made it.</h2>
+<div class="row">
+	<div class="col-md-4">
+		<section>
+			<h1><%= @user.name %></h1>
+			<h2>You made it.</h2>
+		</section>
+		<section>
+			<div class="profile">
+			</div>
+		</section>
+	</div>
+	<div class="col-md-8">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a role="tab" data-toggle="tab">Local</a></li>
+			<li><a role="tab" data-toggle="tab">Regional</a></li>
+			<li><a role="tab" data-toggle="tab">Global</a></li>
+		</ul>
+	</div>
+</div>
