@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Instrument do
-  pending "add some examples to (or delete) #{__FILE__}"
+	before { @instrument = FactoryGirl.create(:instrument) }
+  it { should respond_to(:users) }
+  it { should respond_to(:user)}
 end

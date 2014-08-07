@@ -16,6 +16,10 @@ describe User do
 	it { should respond_to(:password_confirmation) }
 	it { should respond_to(:authenticate) }
 
+	it { should respond_to(:instruments) }
+	it { should respond_to(:plays?) }
+	it { should respond_to(:play!) }
+
 	it { should be_valid }
 
 	describe "with a blank name" do
@@ -74,5 +78,19 @@ describe User do
 	describe "remember token" do
 		before { @user.save }
 		its(:remember_token) { should_not be_blank }
+	end
+
+	describe "playing an instrument" do
+		let(:instrument) { FactoryGirl.create(:instrument) }
+		before do
+			@user.save
+			@user.play!(instrument)
+		end
+
+		it "should be able to play" do
+			expect(@user.plays?(instrument)).to be_true
+		end
+
+		its(:instruments) { should include(instrument) } 
 	end
 end

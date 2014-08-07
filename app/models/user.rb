@@ -12,8 +12,13 @@ class User < ActiveRecord::Base
 	has_many :memberships, dependent: :destroy
 	has_many :groups, through: :memberships
 
+	has_many :user_played_instruments
+	has_many :instruments, through: :user_played_instruments, source: :instrument
+
 	has_secure_password #Thanks Rails!
 	validates :password, length: { minimum: 6 }
+
+	#Groups
 
 	def sign_with!(group)
 		self.memberships.create!(group.id)
@@ -27,6 +32,16 @@ class User < ActiveRecord::Base
 		self.memberships.find_by(group.id).destroy
 	end
 
+	#Instruments
+	def play!(instrument)
+		user_played_instruments.create!(instrument_id: instrument.id)
+	end
+
+	def plays?(instrument)
+		user_played_instruments.find_by(instrument_id: instrument.id)
+	end
+
+	#Session tokens
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64 #Create a random token as a cookie
 	end
