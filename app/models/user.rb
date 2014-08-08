@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
 	has_many :memberships, dependent: :destroy
 	has_many :groups, through: :memberships
 
-	has_many :user_played_instruments
-	has_many :instruments, through: :user_played_instruments, source: :instrument
+	has_many :user_played_instruments, dependent: :destroy
+	has_many :instruments, through: :user_played_instruments
 
 	has_secure_password #Thanks Rails!
 	validates :password, length: { minimum: 6 }
