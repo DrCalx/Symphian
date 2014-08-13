@@ -13,11 +13,7 @@
 				<%= render "edit_button" %>
 				<p>I was once a great composer. But then I discovered my love of kite flying. I flew the kites in the wind. The wind has many moods. Many things to say. It is as complex as any of the greatest concertos. As nuanced as the most beautiful painting. All speaking to me. TElling me of things long past. Caressing me and wrapping me in the comfort of the promise of change and new adventure.</p>
 				
-				<h3>Talents</h3>
-				<%= render "edit_button" %>
-				<% if current_user?(@user) %>
-					<button class="btn btn-xs btn-primary">edit</button>
-				<% end %>
+				<h3>Talents <%= render "edit_button" %></h3>
 				<ul class="list-group instruments">
 					<%= render @instruments %>
 				</ul>
