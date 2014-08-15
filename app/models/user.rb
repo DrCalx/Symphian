@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
 	has_many :instruments, through: :user_played_instruments
 
 	has_secure_password #Thanks Rails!
-	validates :password, length: { minimum: 6 }
+	validates :password, length: { minimum: 6 }, 
+												on: :create
 
 	#Groups
 

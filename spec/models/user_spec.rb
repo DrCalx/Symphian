@@ -20,6 +20,8 @@ describe User do
 	it { should respond_to(:plays?) }
 	it { should respond_to(:play!) }
 
+	it { should respond_to(:bio) }
+
 	it { should be_valid }
 
 	describe "with a blank name" do

@@ -19,12 +19,21 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def update
+		@user = User.find(params[:id])
+		if @user.update_attributes(user_params)
+			redirect_to @user
+		else
+			redirect_to @user
+		end
+	end
+
 	def settings
 	end
 
 	private 
 		def user_params
 			#params is passed in via the form. We need to insure only the correct hash values are present
-			params.require(:user).permit(:name, :email, :password, :password_confirmation)
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio)
 		end
 end

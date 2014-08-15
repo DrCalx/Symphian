@@ -11,7 +11,9 @@
 			<div class="profile">
 				<h3>Bio</h3>
 				<%= render "edit_bio" %>
-				<p>I was once a great composer. But then I discovered my love of kite flying. I flew the kites in the wind. The wind has many moods. Many things to say. It is as complex as any of the greatest concertos. As nuanced as the most beautiful painting. All speaking to me. Telling me of things long past. Caressing me and wrapping me in the comfort of the promise of change and new adventure.</p>
+				<div class="user_bio">
+					<%= current_user.bio %>
+				</div>
 				
 				<h3>Talents</h3>
 				<%= render "edit_instrument" %>
