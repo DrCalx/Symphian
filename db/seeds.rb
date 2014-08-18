@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+[
+{name:"Guitar", category:"String"},
+{name:"Trumpet", category:"Brass"},
+{name:"Drum Kit", category:"Percussion"},
+{name:"Bagpipes", category:"Woodwind"},
+].each do |inst|
+	Instrument.find_or_create_by_name(inst)
+end
