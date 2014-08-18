@@ -1,0 +1,3 @@
+clickedInstrument = function() {
+alert("Hi");
+};

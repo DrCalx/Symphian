@@ -3,7 +3,7 @@
 			<h4>Instruments</h4>
 			<select class="inst-selector" multiple> <!-- all instruments -->
 			<% Instrument.all.each do |inst| %> 
-				<option><%= render inst %></option>
+				<option ondblclick="clickedInstrument()"><%= render inst %></option>
 			<% end %>
 			</select>
 		</div>
