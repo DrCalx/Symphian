@@ -1,0 +1,47 @@
+<% provide(:title, @group.name) %>
+<div class="row">
+	<div class="col-md-4">
+		<section>
+			<h1><%= @group.name %></h1>
+			<h2>Profile Page.</h2>
+		</section>
+		<section>
+			<h3>What can I do here?</h3>
+			<h4>Create a bio, so people can get to know a little more about you</h4>
+			<h4>Select which instruments you play and be matched up with fellow players, or maybe a group looking for your talents</h4>
+			<h4>Choose your favorite generes to narrow the search even more</h4>
+			<h4>Or, create a group of your own, and see how Symphian can help you find others with the talent you need</h4>
+		</section>
+		<section>
+			<button class="btn btn-xs btn-primary">Create a group</button>
+		</section>
+	</div>
+	<div class="col-md-8">
+		<section>
+			<div class="profile">
+				<h3>Bio</h3>
+				<%= render "edit_bio" %>
+				<div class="user_bio">
+					<%= current_user.bio %>
+				</div>
+				
+				<h3>Talents</h3>
+				<%= render "edit_instrument" %>
+				<ul class="list-group instruments">
+					<%= render @instruments %>
+				</ul>
+
+				<h3>Genres Enjoyed</h3>
+				<% if current_user?(@user) %>
+	<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#inst-modal">edit</button>
+	<% end %>
+					<ul>
+						<li>Classical</li>
+						<li>Punk Rock</li>
+						<li>Neo Pop</li>
+						<li>Celtic Folk Dances</li>
+					</ul>
+			</div>
+		</section>
+	</div>
+</div>
