@@ -27,9 +27,7 @@
 					<%= render "member_modal" %>
 				<% end %>
 				<ul class="list-group members">
-					<% @group.members.each do |member| %>
-						<li><%= member.name %></li>
-					<% end %>
+					<%= render @group.members %>
 				</ul>
 
 				<h3>Genres Enjoyed</h3>

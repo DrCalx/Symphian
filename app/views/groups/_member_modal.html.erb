@@ -6,14 +6,24 @@
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h4 class="modal-title" id="myModalLabel">Add a member</h4>
 			</div>
+					<%= form_for @group do |mem| %>
 			<div class="modal-body">
-			<select class="member-selector">
-				<%= options_from_collection_for_select(User.all, :id, :name) %>
-			</select>
+				<div class="row">
+				<div class="col-md-6">					
+					<h4>Every user ever</h4>
+					<%= mem.collection_select(:members, User.all, :id, :name) %>
+					
+				</div>
+				<div class="col-md-6">
+					<h4>Members</h4>
+					<%= render @group.members %>
+				</div>
+			</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary">Add member</button>
+				<%= mem.submit "Add member", class: "btn btn-primary" %>
 			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
