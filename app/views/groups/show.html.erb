@@ -17,9 +17,11 @@
 		<section>
 			<div class="profile">
 				<h3>Bio</h3>
+				<% if manager?(@user) %>
 				<%= render "edit_bio" %>
-				<div class="user_bio">
-					<%= current_user.bio %>
+				<% end %>
+				<div class="group_bio">
+					<%= @group.bio %>
 				</div>
 				
 				<h3>Members</h3>

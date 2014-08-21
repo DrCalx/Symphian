@@ -5,7 +5,13 @@ class GroupsController < ApplicationController
 
 	def update
 		@group = Group.find(params[:id])
-		@group.add_member!(params[:group][:members])
+		@group.update_attributes(group_params)
 		redirect_to @group
+	end
+
+	private
+
+	def group_params
+		params.require(:group).permit(:bio, :members)
 	end
 end

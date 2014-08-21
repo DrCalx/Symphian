@@ -15,6 +15,6 @@ namespace :db do
 		Instrument.create!(	name: "Trumpet",
 												category: "Brass")
 		@hfz = Group.create!(	name: "HFZ")
-		@hfz.
+		
 	end
 end

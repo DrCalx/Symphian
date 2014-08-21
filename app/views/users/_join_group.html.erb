@@ -1,0 +1,16 @@
+<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#group-modal">Join a group</button>
+
+<div class="modal fade" id="group-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			</div>
+			<div class="modal-body">
+				<%= form_for @user do |user_group| %>
+				<%= user_group.collection_select(:groups, Group.all, :id, :name) %>
+				<%= user_group.submit "Join Group" %>
+			</div>
+		</div>
+	</div>
+</div>
