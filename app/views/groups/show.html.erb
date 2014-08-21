@@ -3,17 +3,14 @@
 	<div class="col-md-4">
 		<section>
 			<h1><%= @group.name %></h1>
-			<h2>Profile Page.</h2>
+			<h2>Group page.</h2>
 		</section>
 		<section>
 			<h3>What can I do here?</h3>
-			<h4>Create a bio, so people can get to know a little more about you</h4>
-			<h4>Select which instruments you play and be matched up with fellow players, or maybe a group looking for your talents</h4>
-			<h4>Choose your favorite generes to narrow the search even more</h4>
-			<h4>Or, create a group of your own, and see how Symphian can help you find others with the talent you need</h4>
-		</section>
-		<section>
-			<button class="btn btn-xs btn-primary">Create a group</button>
+			<h4>Create a group bio.</h4>
+			<h4>Add new members</h4>
+			<h4>Add feature such as genre and needed talents</h4>
+			<h4>Only a manager can edit properties of a group - but anyone can be added as a manager</h4>
 		</section>
 	</div>
 	<div class="col-md-8">
@@ -25,14 +22,18 @@
 					<%= current_user.bio %>
 				</div>
 				
-				<h3>Talents</h3>
-				<%= render "edit_instrument" %>
-				<ul class="list-group instruments">
-					<%= render @instruments %>
+				<h3>Members</h3>
+				<% if manager?(@user) %>
+					<%= render "member_modal" %>
+				<% end %>
+				<ul class="list-group members">
+					<% @group.members.each do |member| %>
+						<li><%= member.name %></li>
+					<% end %>
 				</ul>
 
 				<h3>Genres Enjoyed</h3>
-				<% if current_user?(@user) %>
+				<% if manager?(@user) %>
 	<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#inst-modal">edit</button>
 	<% end %>
 					<ul>

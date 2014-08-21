@@ -22,11 +22,11 @@ class User < ActiveRecord::Base
 	#Groups
 
 	def sign_with!(group)
-		self.memberships.create!(group.id)
+		self.memberships.create!(group_id: group.id)
 	end
 
 	def signed_with?(group)
-		self.memberships.find_by(group.id)
+		self.memberships.find_by(group)
 	end
 
 	def unsign_with!(group)

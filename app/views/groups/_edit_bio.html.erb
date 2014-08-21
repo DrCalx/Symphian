@@ -1,0 +1,19 @@
+<% if current_user?(@user) %>
+	<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#bio-modal">edit</button>
+
+	<div class="modal fade" id="bio-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+					<%= form_for(@user) do |f| %>
+						<%= f.text_area :bio %>
+						<%= f.submit "Save changes", class: "btn btn-primary" %>
+					<% end %>					
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
