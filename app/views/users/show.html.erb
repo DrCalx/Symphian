@@ -34,14 +34,17 @@
 
 				<h3>Genres Enjoyed</h3>
 				<% if current_user?(@user) %>
-	<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#inst-modal">edit</button>
-	<% end %>
-					<ul>
-						<li>Classical</li>
-						<li>Punk Rock</li>
-						<li>Neo Pop</li>
-						<li>Celtic Folk Dances</li>
-					</ul>
+					<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#inst-modal">edit</button>
+				<% end %>
+				<ul>
+					<li>Classical</li>
+					<li>Punk Rock</li>
+					<li>Neo Pop</li>
+					<li>Celtic Folk Dances</li>
+				</ul>
+
+				<h3>Groups</h3>
+				<%= render @user.groups %>
 			</div>
 		</section>
 	</div>
