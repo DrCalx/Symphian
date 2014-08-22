@@ -21,11 +21,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		if @user.update_attributes(user_params)
-			redirect_to @user
-		else
-			redirect_to @user
-		end
+		@user.update_attributes(user_params)
 	end
 
 	def settings
@@ -34,6 +30,6 @@ class UsersController < ApplicationController
 	private 
 		def user_params
 			#params is passed in via the form. We need to insure only the correct hash values are present
-			params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio)
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, instrument_ids: [])
 		end
 end

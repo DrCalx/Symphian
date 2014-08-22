@@ -9,10 +9,29 @@
 					<h4 class="modal-title" id="myModalLabel">Choose your weapons</h4>
 				</div>
 				<div class="modal-body">
-					<%= render template: "instruments/selector" %>
+					<div class="row">
+						<div class="col-md-6">
+							<h4>Instruments</h4>
+							
+							<%= form_for @user do |f| %>
+							<div class="checkbox-list">
+								<%= f.collection_check_boxes(:instrument_ids, Instrument.all, :id, :name, :item_wrapper_class => "checkbox-list") %>
+							</div>
+								<%= f.submit "Add instrument" %>
+							<% end %>
+						</div>
+						<div class="col-md-6"> <!-- user instruments -->
+							<h4>My Instruments</h4>
+							<ul id="user-instruments">
+							<% @instruments.each do |user_inst| %>
+								<%= render user_inst %>
+							<% end %>
+							</ul> 
+						</div>
+					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button">Save changes</button>
 				</div>
 			</div>
 		</div>
