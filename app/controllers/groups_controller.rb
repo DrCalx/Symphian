@@ -12,6 +12,6 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:group).permit(:bio, :member_ids => [])
+		params.require(:group).permit(:bio, :member_ids => [], :genre_ids => [])
 	end
 end

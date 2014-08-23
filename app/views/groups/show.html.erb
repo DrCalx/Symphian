@@ -5,6 +5,7 @@
 			<h1><%= @group.name %></h1>
 			<h2>Group page.</h2>
 		</section>
+		<% if manager?(@user) %>
 		<section>
 			<h3>What can I do here?</h3>
 			<h4>Create a group bio.</h4>
@@ -12,37 +13,32 @@
 			<h4>Add feature such as genre and needed talents</h4>
 			<h4>Only a manager can edit properties of a group - but anyone can be added as a manager</h4>
 		</section>
+		<% end %>
 	</div>
 	<div class="col-md-8">
-		<section>
-			<div class="profile">
-				<h3>Bio</h3>
-				<% if manager?(@user) %>
+		<div class="profile">
+			<div class="h3">Bio
+			<% if manager?(@user) %>
 				<%= render "edit_bio" %>
-				<% end %>
-				<div class="group_bio">
-					<%= @group.bio %>
-				</div>
-				
-				<h3>Members</h3>
-				<% if manager?(@user) %>
-					<%= render "member_modal" %>
-				<% end %>
-				<ul class="list-group members">
-					<%= render @group.members %>
-				</ul>
-
-				<h3>Genres Enjoyed</h3>
-				<% if manager?(@user) %>
-	<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#inst-modal">edit</button>
-	<% end %>
-					<ul>
-						<li>Classical</li>
-						<li>Punk Rock</li>
-						<li>Neo Pop</li>
-						<li>Celtic Folk Dances</li>
-					</ul>
+			<% end %>
 			</div>
-		</section>
+			<div class="group_bio">
+				<%= @group.bio %>
+			</div>
+			
+			<div class="h3">Members
+			<% if manager?(@user) %>
+				<%= render "member_modal" %>
+			<% end %>
+			</div>
+			<%= render @group.members %>
+
+			<div class="h3">Genre
+			<% if manager?(@user) %>
+				<%= render "genre_modal" %>
+			<% end %>
+			</div>
+			<%= render @group.genres %>
+		</div>
 	</div>
 </div>

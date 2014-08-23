@@ -14,3 +14,13 @@
 ].each do |inst|
 	Instrument.find_or_create_by_name(inst)
 end
+
+[
+{name:"Folk"},
+{name:"Rock"},
+{name:"Classical"},
+{name:"Jazz"},
+{name:"Country"},
+].each do |genre|
+	Genre.find_or_create_by_name(genre)
+end
