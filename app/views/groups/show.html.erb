@@ -17,28 +17,29 @@
 	</div>
 	<div class="col-md-8">
 		<div class="profile">
-			<div class="h3">Bio
-			<% if manager?(@user) %>
-				<%= render "edit_bio" %>
-			<% end %>
-			</div>
-			<div class="group_bio">
-				<%= @group.bio %>
-			</div>
+			<div class="bio_block">
+				<h3>Bio</h3>
+				<% if manager?(@user) %>
+					<%= render "edit_bio" %>
+				<% end %>
+				<p><%= @group.bio %></p>
+			</div>			
 			
-			<div class="h3">Members
-			<% if manager?(@user) %>
-				<%= render "member_modal" %>
-			<% end %>
+			<div class="bio_block">
+				<h3>Members</h3>
+				<% if manager?(@user) %>
+					<%= render "member_modal" %>
+				<% end %>
+				<%= render @group.members %>
 			</div>
-			<%= render @group.members %>
 
-			<div class="h3">Genre
-			<% if manager?(@user) %>
-				<%= render "genre_modal" %>
-			<% end %>
+			<div class="bio_block">
+				<h3>Genre</h3>
+				<% if manager?(@user) %>
+					<%= render "genre_modal" %>
+				<% end %>
+				<%= render @group.genres %>
 			</div>
-			<%= render @group.genres %>
 		</div>
 	</div>
 </div>

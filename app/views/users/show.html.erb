@@ -20,32 +20,37 @@
 		<% end %>
 	</div>
 	<div class="col-md-8">
-		<section>
-			<div class="profile">
-				<div class="h3">Bio
-					<%= render "edit_bio" %>
-				</div>
-				<div class="user_bio">
-					<%= current_user.bio %>
-				</div>
-				
-				<div class="h3">Talents
-					<%= render "edit_instrument" %>
-				</div>
+		<div class="profile">
+			<div class="bio_block">
+				<h3>Bio</h3>
+				<%= render "edit_bio" %>
+				<p><%= current_user.bio %></p>
+			</div>
+			
+			<div class="bio_block">
+				<h3>Talents</h3>
+				<%= render "edit_instrument" %>
 				<ul class="list-group instruments">
 					<%= render @instruments %>
 				</ul>
-
-				<div class="h3">Genres Enjoyed
-					<% if current_user?(@user) %>
-						<%= render "genre_modal" %>
-					<% end %>
-				</div>
-				<%= render @user.genres %>
-
-				<h3>Groups</h3>
-				<%= render @user.groups %>
 			</div>
-		</section>
+
+			<div class="bio_block">
+				<h3>Genres Enjoyed</h3>
+				<% if current_user?(@user) %>
+					<%= render "genre_modal" %>
+				<% end %>
+				<ul class="list-group">				
+					<%= render @user.genres %>
+				</ul>
+			</div>
+
+			<div class="bio_block">
+				<h3>Groups</h3>
+				<ul class="list-group">
+					<%= render @user.groups %>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
