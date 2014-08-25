@@ -24,7 +24,7 @@
 			<div class="bio_block">
 				<h3>Zip</h3>
 				<% if current_user?(@user) %>
-					<%= render edit_zip %>
+					<%= render "edit_zip" %>
 				<% end %>
 				<p><%= @user.zip %></p>
 			</div>
