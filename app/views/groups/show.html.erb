@@ -18,6 +18,13 @@
 	<div class="col-md-8">
 		<div class="profile">
 			<div class="bio_block">
+				<h3>Zip</h3>
+				<% if manager?(@user) %>
+					<%= render "edit_zip" %>
+				<% end %>
+				<p><%= @group.zip %>
+			</div>
+			<div class="bio_block">
 				<h3>Bio</h3>
 				<% if manager?(@user) %>
 					<%= render "edit_bio" %>

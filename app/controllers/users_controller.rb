@@ -31,6 +31,6 @@ class UsersController < ApplicationController
 	private 
 		def user_params
 			#params is passed in via the form. We need to insure only the correct hash values are present
-			params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :instrument_ids => [], :genre_ids => [])
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :zip, :bio, :instrument_ids => [], :genre_ids => [])
 		end
 end
