@@ -35,7 +35,7 @@
 			<div class="bio_block">
 				<h3>Members</h3>
 				<% if manager?(@user) %>
-					<%= render "member_modal" %>
+					<%= render "edit_member" %>
 				<% end %>
 				<%= render @group.members %>
 			</div>
@@ -43,7 +43,7 @@
 			<div class="bio_block">
 				<h3>Genre</h3>
 				<% if manager?(@user) %>
-					<%= render "genre_modal" %>
+					<%= render "edit_genre" %>
 				<% end %>
 				<%= render @group.genres %>
 			</div>
