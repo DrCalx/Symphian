@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@instruments = @user.instruments
-		@openings = Opening.where(:zip => '03235', :instrument_id => '1')
+		@quack = @user.instruments.collect { |instrument| instrument.id }
+		@openings = Opening.where(:zip => @user.zip, :instrument_id => @quack)
 	end
 
 	def index
