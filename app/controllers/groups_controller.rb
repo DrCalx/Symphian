@@ -3,6 +3,10 @@ class GroupsController < ApplicationController
 		@group = Group.find(params[:id])
 	end
 
+	def index
+		@groups = Group.all
+	end
+
 	def update
 		@group = Group.find(params[:id])
 		@group.update_attributes(group_params)
