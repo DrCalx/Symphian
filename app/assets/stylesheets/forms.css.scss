@@ -21,3 +21,11 @@ input {
 	margin-left: 10%;
 	width: 80%;
 }
+
+body.modal-open {
+	margin-right: 0px !important;
+}
+
+body.modal {
+	overflow: auto;
+}

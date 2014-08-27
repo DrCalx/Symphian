@@ -12,6 +12,10 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:group).permit(:bio, :zip, :member_ids => [], :genre_ids => [])
+		params.require(:group).permit(	:bio, 
+			:zip,
+			:member_ids => [], 
+			:genre_ids => [], 
+			openings_attributes: [:instrument_id, :description])
 	end
 end

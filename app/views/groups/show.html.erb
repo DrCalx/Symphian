@@ -41,6 +41,14 @@
 			</div>
 
 			<div class="bio_block">
+				<h3>Openings</h3>
+				<% if manager?(@user) %>
+					<%= render "edit_opening" %>
+				<% end %>
+				<%= render @group.openings %>
+			</div>
+
+			<div class="bio_block">
 				<h3>Genre</h3>
 				<% if manager?(@user) %>
 					<%= render "edit_genre" %>

@@ -1,3 +1,0 @@
-clickedInstrument = function() {
-alert("Hi");
-};
