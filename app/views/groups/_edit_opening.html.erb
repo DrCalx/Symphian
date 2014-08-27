@@ -7,17 +7,17 @@
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h4 class="modal-title" id="myModalLabel">Create an opening</h4>
 			</div>
-			<div class="modal-body">
-				<%= form_for(setup_opening(@group)) do |g| %>
-					<%= g.fields_for :openings do |o| %>
-						<%= o.collection_select :instrument_id, Instrument.all, :id, :name %>
-						<%= o.text_area :description %>
-					<% end %>
-					<%= g.submit "Create", :class => "btn btn-primary" %>
-				<% end %>
+			<div class="modal-body">			
+			<%= form_for @opening do |o| %>
+				<%= o.hidden_field :group_id, :value => @group.id %>
+				<%= o.hidden_field :zip, :value => @group.zip %>
+				<%= o.collection_select :instrument_id, Instrument.all, :id, :name %>
+				<%= o.text_area :description %>
+				<%= o.submit "Create", :class => "btn btn-primary" %>
+			<% end %>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary">Create</button>
+				
 			</div>
 		</div>
 	</div>

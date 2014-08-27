@@ -1,0 +1,5 @@
+<% provide :title, "All Instruments" %>
+<h1>All Instruments</h1>
+<ul><% @instruments.each do |instrument| %>
+	<li><%= instrument.id.to_s + " " + instrument.name %></li>
+<% end %></ul>

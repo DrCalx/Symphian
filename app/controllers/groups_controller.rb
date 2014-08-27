@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 	def show
 		@group = Group.find(params[:id])
+		@opening = @group.openings.build
 	end
 
 	def index

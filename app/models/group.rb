@@ -3,7 +3,6 @@ class Group < ActiveRecord::Base
 	has_many :members, through: :memberships, source: :user
 
 	has_many :openings, dependent: :destroy
-	accepts_nested_attributes_for :openings
 
 	has_and_belongs_to_many :genres
 
