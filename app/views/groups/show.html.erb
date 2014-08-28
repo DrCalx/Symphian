@@ -20,7 +20,7 @@
 			<div class="bio_block">
 				<h3>Zip</h3>
 				<% if manager?(@user) %>
-					<%= render "edit_zip" %>
+					<%= render :partial => "edit_zip" %>
 				<% end %>
 				<p><%= @group.zip %>
 			</div>
@@ -45,7 +45,9 @@
 				<% if manager?(@user) %>
 					<%= render "edit_opening" %>
 				<% end %>
-				<%= render @group.openings %>
+				<% @group.openings.each do |opening| %>
+					<%= render opening %> | <%= link_to "delete", opening, method: :delete %>
+				<% end %>
 			</div>
 
 			<div class="bio_block">

@@ -9,6 +9,14 @@ class OpeningsController < ApplicationController
 		end
 	end
 
+	def destroy
+		opening = Opening.find(params[:id])
+		group = opening.group
+		opening.destroy
+		flash[:success] = "Destroyed Opening"
+		redirect_to group
+	end
+
 	private
 	def opening_params
 		params.require(:opening).permit(:zip, :instrument_id, :description, :group_id)
