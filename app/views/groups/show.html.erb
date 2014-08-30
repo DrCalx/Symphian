@@ -20,7 +20,12 @@
 			<div class="bio_block">
 				<h3>Zip</h3>
 				<% if manager?(@user) %>
-					<%= render :partial => "edit_zip" %>
+									<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
+					<%= fields_for(@user) do |f| %>
+						<%= f.text_field :zip %>
+						<%= f.submit "Save changes", class: "btn btn-primary" %>
+					<% end %>
+				<% end %>
 				<% end %>
 				<p><%= @group.zip %>
 			</div>
