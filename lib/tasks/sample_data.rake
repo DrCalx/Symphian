@@ -15,6 +15,8 @@ namespace :db do
 		Instrument.create!(	name: "Trumpet",
 												category: "Brass")
 		@hfz = Group.create!(	name: "HFZ")
+
+		Genre.create!(:name => "Jazz")
 		
 	end
 end
