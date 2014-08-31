@@ -15,6 +15,8 @@ gem 'sprockets', '2.11.0'
 
 gem 'bcrypt-ruby', '3.1.2'
 
+gem 'soundcloud', '0.3.2'
+
 # Use sqlite3 as the database for Active Record
 
 group :development, :test do
