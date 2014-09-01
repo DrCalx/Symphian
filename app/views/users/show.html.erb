@@ -17,7 +17,7 @@
 			<button class="btn btn-xs btn-primary">Create a group</button>
 			<button class="btn btn-xs btn-primary">Join a group</button>
 		</section>
-		<button id="soundcloud-login"><img src="http://connect.soundcloud.com/2/btn-connect-l.png"></button>
+		<button class="sc-connect" id="soundcloud-login"><img src="http://connect.soundcloud.com/2/btn-connect-sc-m.png"></button>
 		<% end %>
 	</div>
 	<div class="col-md-8">
@@ -78,18 +78,3 @@
 		</div>
 	</div>
 </div>
-
-<script src="http://connect.soundcloud.com/sdk.js"></script>
-<script>
-SC.initialize({
-	client_id: 'MatthewDug1',
-	redirect_uri: 'none.html'
-});
-
-SC.connect(function() {
-	SC.get('/me', function(me) {
-		alert('Hello, ' + me.username);
-	});
-});
-
-</script>
