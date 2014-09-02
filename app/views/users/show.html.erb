@@ -17,7 +17,9 @@
 			<button class="btn btn-xs btn-primary">Create a group</button>
 			<button class="btn btn-xs btn-primary">Join a group</button>
 		</section>
-		<button class="sc-connect" id="soundcloud-login"><img src="http://connect.soundcloud.com/2/btn-connect-sc-m.png"></button>
+		<div>
+			<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud"), soundcloud_connect_path, :class => "connect" %>
+		</div>
 		<% end %>
 	</div>
 	<div class="col-md-8">

@@ -21,7 +21,9 @@ class User < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }, 
 												on: :create
 
-	#Groups
+	#SoundCloud
+	SOUNDCLOUD_CLIENT_ID			= "e4766e375be7af45b4943567c94f0206"
+	SOUNDCLOUD_CLIENT_SECRET 	= "fa58decf55d7638e3867e7bbab300887"
 
 	def sign_with!(group)
 		self.memberships.create!(group_id: group.id)
@@ -56,5 +58,36 @@ class User < ActiveRecord::Base
 	private
 	def create_remember_token
 		self.remember_token = User.digest(User.new_remember_token)
+	end
+
+	#----------------------SoundCloud----------------------
+
+	def self.soundcloud_client(options = {})
+		options = {
+			:client_id 			=> SOUNDCLOUD_CLIENT_ID,
+			:client_secret 	=> SOUNDCLOUD_CLIENT_SECRET
+		}.merge(options)
+
+		SoundCloud.new(options)
+	end
+
+	def soundcloud_client(options = {})
+		options = {			
+			:access_token 	=> soundcloud_access_token,
+			:refresh_token 	=> soundcloud_refresh_token,
+			:expires_at			=> soundcloud_expires_at,
+		}.merge(options)
+
+		client = self.class.soundcloud_client(options)
+
+		client.on_exchange_token do
+			self.update_attributes!({
+				:soundcloud_access_token 	=> client.access_token,
+				:soundcloud_refresh_token => client.refresh_token,
+				:soundclout_expires_at 		=> client.expires_at,
+				})
+		end
+
+		return client
 	end
 end

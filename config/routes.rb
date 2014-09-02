@@ -8,13 +8,19 @@ Symphian::Application.routes.draw do
       get :members
     end
   end
+
   root 'static_pages#home'
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/signup', to: 'users#new', via: 'get'
-  match '/signin', to: 'sessions#new', via: 'get'
-  match '/signout', to: 'sessions#destroy', via: 'delete'
-  match '/settings', to: 'users#settings', via: 'get'
-  match '/callbacks/soundcloud', to: 'callbacks#soundcloud', via: 'post'
+  
+  match '/about',     to: 'static_pages#about', via: 'get'
+  match '/signup',    to: 'users#new',          via: 'get'
+  match '/signin',    to: 'sessions#new',       via: 'get'
+  match '/signout',   to: 'sessions#destroy',   via: 'delete'
+  match '/settings',  to: 'users#settings',     via: 'get'
+
+  match '/soundcloud/connect',    to: 'soundcloud#connect',     via: 'get'
+  match '/soundcloud/connected',  to: 'soundcloud#connected',   via: 'get'
+  match '/soundcloud/disconnect', to: 'soundcloud#disconnect',  via: 'get'
+
   get "static_pages/home"
   get "static_pages/about"
   # The priority is based upon order of creation: first created -> highest priority.
