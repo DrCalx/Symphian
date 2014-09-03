@@ -1,8 +1,14 @@
 <% if signed_in? %>
 	<div class="row">
 		<div class="col-md-4">
-			<h1><%= current_user.name %></h1>
-			<h2>Home Page</h2>
+			<div>
+				<h1><%= current_user.name %></h1>
+				<h2>Home Page</h2>
+			</div>
+			<div class="soundcloud-stream">
+				<%= @favtracks.to_yaml %>
+				
+			</div>
 		</div>
 		<div class="col-md-8">
 			<div class="center jumbotron">

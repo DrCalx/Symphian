@@ -55,10 +55,7 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s) #Hash the token so no one can steal it from the db
 	end
 
-	private
-	def create_remember_token
-		self.remember_token = User.digest(User.new_remember_token)
-	end
+
 
 	#----------------------SoundCloud----------------------
 
@@ -90,4 +87,11 @@ class User < ActiveRecord::Base
 
 		return client
 	end
+
+	#---------------- Private ------------------
+
+	private
+		def create_remember_token
+			self.remember_token = User.digest(User.new_remember_token)
+		end
 end

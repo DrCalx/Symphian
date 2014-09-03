@@ -20,7 +20,12 @@
 		<div>
 			<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud"), soundcloud_connect_path, :class => "connect" %>
 			<div class="soundcloud-user">
-				You are logged in as:<span class="username"><%= @user.soundcloud_username if sc_logged_in? %></span>
+				<span class="username"><% if sc_logged_in? %><%= @user.soundcloud_username %>Favorite Tracks <%end%></span>
+				<% @favtracks = @user.soundcloud_client.get("/me/favorites", :limit => 5) %>
+				<% @favtracks.each do |track| %>
+					<% @embed_info = current_user.soundcloud_client.get('/oembed', :url => track.permalink_url, :maxheight => 166) %>
+					<div style="height:166px"><%= @embed_info['html'].html_safe %></div>
+				<% end %>
 			</div>
 		</div>
 		<% end %>
