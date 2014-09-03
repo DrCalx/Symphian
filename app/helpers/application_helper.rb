@@ -22,4 +22,13 @@ module ApplicationHelper
 		#controller.class.to_s.gsub("Controller", '').underscore.gsub("/",'_')+" "+content_for(:page_class)
 		return "butz"
 	end
+
+	def current_user
+		@current_user
+	end
+
+	def logged_in?
+		puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+		!!current_user
+	end
 end

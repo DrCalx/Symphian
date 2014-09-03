@@ -19,6 +19,9 @@
 		</section>
 		<div>
 			<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud"), soundcloud_connect_path, :class => "connect" %>
+			<div class="soundcloud-user">
+				You are logged in as:<span class="username"><%= @user.soundcloud_username if sc_logged_in? %></span>
+			</div>
 		</div>
 		<% end %>
 	</div>
