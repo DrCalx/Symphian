@@ -59,6 +59,14 @@ class User < ActiveRecord::Base
 
 	#----------------------SoundCloud----------------------
 
+	def logged_into_soundcloud?
+		@logged_in ||= false
+	end
+
+	def logged_into_soundcloud=(logged_in)
+		@logged_in = logged_in
+	end
+
 	def self.soundcloud_client(options = {})
 		options = {
 			:client_id 			=> SOUNDCLOUD_CLIENT_ID,
