@@ -1,16 +1,14 @@
 module SoundcloudHelper
-	def sc_current_user
-		@sc_current_user
+	def sc_login_as(user)
+		session[:current_user_id] = user.try(:id)
+	end
+
+	#For future "soundcloud-only" login
+	def sc_login_from_session
+		@current_user = User.find_by(:id, session[:current_user_id])
 	end
 
 	def sc_logged_in?
-		!!sc_current_user
-		return true
+		!!session[:current_user_id]
 	end
-
-	def sc_login_as(user)
-		puts "11111111111111111111111111111111111111111111111111111"
-  	@sc_current_user = user
-  	session[:current_user_id] = user.try(:id)
-  end
 end

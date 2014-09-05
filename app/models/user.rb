@@ -21,9 +21,7 @@ class User < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }, 
 												on: :create
 
-	#SoundCloud
-	SOUNDCLOUD_CLIENT_ID			= "e4766e375be7af45b4943567c94f0206"
-	SOUNDCLOUD_CLIENT_SECRET 	= "fa58decf55d7638e3867e7bbab300887"
+	#------------------ Groups ---------------------
 
 	def sign_with!(group)
 		self.memberships.create!(group_id: group.id)
@@ -37,7 +35,8 @@ class User < ActiveRecord::Base
 		self.memberships.find_by(group.id).destroy
 	end
 
-	#Instruments
+	#---------------- Instruments ---------------------
+	
 	def play!(instrument)
 		user_played_instruments.create!(instrument_id: instrument.id)
 	end
@@ -46,7 +45,8 @@ class User < ActiveRecord::Base
 		user_played_instruments.find_by(instrument_id: instrument.id)
 	end
 
-	#Session tokens
+	#----------------- Session -------------------
+
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64 #Create a random token as a cookie
 	end
@@ -55,17 +55,10 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s) #Hash the token so no one can steal it from the db
 	end
 
+	#---------------------- SoundCloud ----------------------
 
-
-	#----------------------SoundCloud----------------------
-
-	def logged_into_soundcloud?
-		@logged_in ||= false
-	end
-
-	def logged_into_soundcloud=(logged_in)
-		@logged_in = logged_in
-	end
+	SOUNDCLOUD_CLIENT_ID			= "e4766e375be7af45b4943567c94f0206"
+	SOUNDCLOUD_CLIENT_SECRET 	= "fa58decf55d7638e3867e7bbab300887"
 
 	def self.soundcloud_client(options = {})
 		options = {

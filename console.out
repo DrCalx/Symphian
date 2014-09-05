@@ -1,0 +1,5 @@
+=> #<File:console.out>
+irb(main):006:0> #$%^C
+irb(main):006:0> ^C
+irb(main):006:0> ^Z^C
+irb(main):006:0> 

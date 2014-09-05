@@ -4,6 +4,7 @@ class SoundcloudController < ApplicationController
 	#End User Auth: https://soundcloud.com/connect
 	#Token: https://api.soundcloud.com/oauth2/token
 	include SoundcloudHelper
+	
 
 	def connect
 		redirect_to soundcloud_client.authorize_url(:display => "popup")
@@ -16,24 +17,30 @@ class SoundcloudController < ApplicationController
 
 			#If I actually want to use SoundCloud login as Symphian Login
 
-			sc_login_as User.find_or_create_by_soundcloud_user_id({
+			sc_login_as(current_user)
+
+			#For future "soundcloud-only" login
+			#sc_login_as User.find_or_create_by_soundcloud_user_id({
+			#	:soundcloud_user_id => me.id,
+			#	:soundcloud_username => me.username,
+			#})
+
+			current_user.update_attributes!({
 				:soundcloud_user_id => me.id,
-				:soundcloud_username => me.username,
+				:soundcloud_username => me.permalink,
 			})
 
 			current_user.update_attributes!({
 				:soundcloud_access_token => soundcloud_client.access_token,
 				:soundcloud_refresh_token => soundcloud_client.refresh_token,
 				:soundcloud_expires_at => soundcloud_client.expires_at,
-			})
-
-			current_user.logged_into_soundcloud = true
+			})			
 		end
 		redirect_to current_user
 	end
 
 	def disconnect
-		soundcloud_client = nil
+		sc_login_as(nil)
 		redirect_to current_user
 	end
 
