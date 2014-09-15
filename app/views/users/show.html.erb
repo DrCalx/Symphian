@@ -1,13 +1,11 @@
 <% provide(:title, @user.name) %>
 <div class="row">
 	<div class="col-md-4">
-		<section>
-			<h1>
-				<%= gravatar_for @user %>
-				<a href="http://gravatar.com/emails">change</a>
-				<%= @user.name %>
-			</h1>
-		</section>
+		<h1>
+			<%= gravatar_for @user %>
+			<%= @user.name %>
+		</h1>
+		<a href="http://gravatar.com/emails">change</a>
 		<% if current_user?(@user) %>
 		<section>
 			<h3>What can I do here?</h3>
