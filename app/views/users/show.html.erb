@@ -2,8 +2,11 @@
 <div class="row">
 	<div class="col-md-4">
 		<section>
-			<h1><%= @user.name %></h1>
-			<h2>Profile Page.</h2>
+			<h1>
+				<%= gravatar_for @user %>
+				<a href="http://gravatar.com/emails">change</a>
+				<%= @user.name %>
+			</h1>
 		</section>
 		<% if current_user?(@user) %>
 		<section>

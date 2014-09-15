@@ -11,4 +11,11 @@ module SoundcloudHelper
 	def sc_logged_in?
 		!!session[:current_user_id]
 	end
+
+	def sc_connect_link
+		link_to image_tag("btn-connect-sc-m.png", :border => 0, 
+																							:alt => "Connect With SoundCloud"),
+						soundcloud_connect_path, 
+						:class => "connect"
+	end
 end
