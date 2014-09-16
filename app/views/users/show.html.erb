@@ -1,46 +1,37 @@
 <% provide(:title, @user.name) %>
+<div id="profile">
 <div class="row">
-	<div class="col-md-4">
-		<h1>
-			<%= gravatar_for @user %>
-			<%= @user.name %>
-		</h1>
-		<a href="http://gravatar.com/emails">change</a>
-		<% if current_user?(@user) %>
-		<section>
-			<h3>What can I do here?</h3>
-			<h4>Create a bio, so people can get to know a little more about you</h4>
-			<h4>Select which instruments you play and be matched up with fellow players, or maybe a group looking for your talents</h4>
-			<h4>Choose your favorite generes to narrow the search even more</h4>
-			<h4>Or, create a group of your own, and see how Symphian can help you find others with the talent you need</h4>
-		</section>
-		<section>
-			<button class="btn btn-xs btn-primary">Create a group</button>
-			<button class="btn btn-xs btn-primary">Join a group</button>
-		</section>
-		<div>
-			<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud"), soundcloud_connect_path, :class => "connect" %>
-			<%= link_to image_tag("btn-disconnect-m.png", :border => 0, :alt => "Disconnect from SoundCloud"),
-				soundcloud_disconnect_path, :class => "disconnect" %>
-			<div class="soundcloud-user">
+	<div id="profile_header" class="col-md-12">
+		<a href="http://gravatar.com/emails"><%= gravatar_for @user %></a>
+		<h1><%= @user.name %></h1>
+	</div>
+</div>
+<div class="row">
+	<div id="profile_bio_col" class="col-md-4">
+		<div id="profile_about" class="bio_block">
+			<h2>Introduction</h2>
+			<p><%= @user.bio %></p>
+		</div>
+		<div id="profile_soundcloud">
+			<h2>SoundCloud</h2>
+			<div id="soundcloud_widget">						
 				<% if sc_logged_in? %>
-					<%# @favtracks = current_user.soundcloud_client.get("/me/favorites", :limit => 5) %>
-
-
-					<!-- Known Bug: If the user changes their permalink URI from within soundcloud, this will 404 until they re-login -->
 					<% @embed_info = current_user.soundcloud_client.get('/oembed', 
 																:url => "http://soundcloud.com/#{current_user.soundcloud_username}/favorites", 
 																:maxheight => 166) %>
-					<div style="height:166px"><%= @embed_info['html'].html_safe %></div>					
+					<div style="height:166px"><%= @embed_info['html'].html_safe %></div>
+					<%= link_to image_tag("btn-disconnect-m.png", :border => 0, :alt => "Disconnect from SoundCloud"),
+				soundcloud_disconnect_path, :class => "disconnect" %>
+				<% else %>
+					<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud"), soundcloud_connect_path, :class => "connect" %>
 				<% end %>
 			</div>
 		</div>
-		<% end %>
 	</div>
-	<div class="col-md-8">
-		<div class="profile">
-			<div class="bio_block">
-				<h3>Zip</h3>
+	<div id="profile_social" class="col-md-8">
+		<dl class="bio_block">
+			<dt>Zip</dt>
+			<dd id="profile_zip">
 				<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
 					<%= fields_for(@user) do |f| %>
 						<%= f.text_field :zip %>
@@ -48,10 +39,10 @@
 					<% end %>
 				<% end %>
 				<p><%= @user.zip %></p>
-			</div>
-
-			<div class="bio_block">
-				<h3>Bio</h3>
+			</dd>
+		
+			<dt>Bio</dt>
+			<dd id="profile_zip">
 				<%= render :layout => "shared/edit_modal", :locals => {:title => 'Bio'} do %>
 					<%= fields_for(@user) do |form| %>
 						<%= form.text_area :bio %>
@@ -59,39 +50,44 @@
 					<% end %>
 				<% end %>
 				<p><%= @user.bio %></p>
-			</div>
-			
-			<div class="bio_block">
-				<h3>Talents</h3>
- 				<%= render :layout => "shared/edit_modal", :locals => {:id => 'inst', :title => 'Select Instruments'} do %>
+			</dd>
+		
+			<dt>Talents</dt>
+			<dd id="profile_zip">
+				<%= render 	:layout => "shared/edit_modal", 
+										:locals => { 	:id => 'inst', 
+																	:title => 'Select Instruments'} do %>
 					<%= render "edit_instrument" %>
 				<% end %>
 				<ul class="list-group instruments">
 					<%= render @instruments %>
 				</ul>
-			</div>
-
-			<div class="bio_block">
-				<h3>Genres Enjoyed</h3>
-				<%= render :layout => "shared/edit_modal", :locals => {:id => 'genre', :title => 'Genres'} do %>
+			</dd>
+		
+			<dt>Genres Enjoyed</dt>
+			<dd id="profile_zip">
+				<%= render 	:layout => "shared/edit_modal", 
+										:locals => { 	:id => 'genre', 
+																	:title => 'Genres'} do %>
 					<%= render "edit_genre" %>
 				<% end %>
 				<ul class="list-group">				
 					<%= render @user.genres %>
 				</ul>
-			</div>
-
-			<div class="bio_block">
-				<h3>Groups</h3>
+			</dd>
+		
+			<dt>Groups</dt>
+			<dd id="profile_zip">
 				<ul class="list-group">
 					<%= render @user.groups %>
 				</ul>
-			</div>
-
-			<div class="bio_block">
-				<h3>Openings</h3>
+			</dd>
+		
+			<dt>Openings</dt>
+			<dd id="profile_zip">
 				<%= render @openings %>
-			</div>
+			</dd>
 		</div>
 	</div>
+</div>
 </div>
