@@ -3,7 +3,7 @@
 <% id ||= 'edit' %>
 
 <% if current_user?(@user) %>
-	<button class="btn btn-xs btn-primary btn-edit" data-toggle="modal" data-target="#<%=id%>-modal"><%= btn_text %></button>
+	<button id="edit_button" class="btn btn-xs btn-primary btn-edit" data-toggle="modal" data-target="#<%=id%>-modal"><%= btn_text %></button>
 
 	<div class="modal fade" id="<%=id%>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -14,7 +14,6 @@
 						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 					</button>
 				</div>
-
 				<div class="modal-body">
 					<%= form_tag(@user, :method => 'patch') %>
 					<%= yield %>

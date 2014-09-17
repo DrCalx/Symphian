@@ -1,0 +1,7 @@
+<%= fields_for @user do |f| %>
+	<div class="checkbox-list">
+		<%= f.collection_check_boxes(:instrument_ids, Instrument.all, :id, :name, 
+			:item_wrapper_class => "checkbox-list") %>
+	</div>
+	<%= f.submit "Add instrument" %>
+<% end %>

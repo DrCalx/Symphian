@@ -1,0 +1,42 @@
+<dl>
+	<dt>Zip</dt>
+	<dd id="profile_zip">
+		<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
+			<%= fields_for(@user) do |f| %>
+				<%= f.text_field :zip %>
+				<%= f.submit "Save changes", class: "btn btn-primary" %>
+			<% end %>
+		<% end %>
+		<%= @user.zip %>
+	</dd>
+
+	<dt>Talents</dt>
+	<dd id="profile_instruments">
+		<%= render 	:layout => "shared/edit_modal", 
+								:locals => { 	:id => 'inst', 
+															:title => 'Select Instruments'} do %>
+			<%= render "instruments/select" %>
+		<% end %>
+		<%= @user.instruments.map(&:name).join(", ") %>
+	</dd>
+
+	<dt>Genres</dt>
+	<dd id="profile_genres">
+		<%= render 	:layout => "shared/edit_modal", 
+								:locals => { 	:id => 'genre', 
+															:title => 'Genres'} do %>
+			<%= render "genres/select" %>
+		<% end %>
+		<%= render @user.genres %>
+	</dd>
+
+	<dt>Groups</dt>
+	<dd id="profile_groups">
+		<%= render @user.groups %>				
+	</dd>
+
+	<dt>Openings</dt>
+	<dd id="profile_openings">
+		<%= render @openings %>
+	</dd>
+</dl>

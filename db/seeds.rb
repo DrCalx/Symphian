@@ -11,14 +11,34 @@
 {name:"Trumpet", category:"Brass"},
 {name:"Drum Kit", category:"Percussion"},
 {name:"Bagpipes", category:"Woodwind"},
+{name:"Baritone Horn", category:"Woodwind"},
+{name:"Acoustic Bass", category:"Woodwind"},
+{name:"Electric Bass", category:"Woodwind"},
+{name:"Bassoon", category:"Woodwind"},
+{name:"Cello", category:"Woodwind"},
+{name:"Clarinet", category:"Woodwind"},
+{name:"Electronics", category:"Woodwind"},
+{name:"Flute", category:"Woodwind"},
+{name:"French Horn", category:"Woodwind"},
 ].each do |inst|
 	Instrument.find_or_create_by_name(inst)
 end
 
 [
 {name:"Folk"},
+{name:"Bluegrass"},
+{name:"Blues"},
+{name:"Children's"},
+{name:"Electronic"},
+{name:"Funk"},
 {name:"Rock"},
 {name:"Classical"},
+{name:"Gospel"},
+{name:"Hip Hop"},
+{name:"Metal"},
+{name:"Pop"},
+{name:"Reggae"},
+{name:"Worship"},
 {name:"Jazz"},
 {name:"Country"},
 ].each do |genre|

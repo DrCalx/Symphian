@@ -9,10 +9,58 @@
 }
 
 #profile_header {
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	border-bottom: 3px solid #333;
+	margin-bottom: 28px;
 }
+
+.section_title {
+
+	/* border-bottom: 3px solid #888; */
+
+	& h2 {
+		text-align: left;
+		margin-top: 0px;
+	} 
+
+	& #edit_button {
+		margin-left: 50px;
+		margin-bottom: 30px;
+		margin-top: 30px;		
+	}
+}
+
 
 .bio_block {
 	border-bottom: 3px solid #333;
+	margin-bottom: 28px;
+}
+
+#edit_button {
+	float: right;
+	margin-right: 50px;
+}
+
+dl {
+	width: 100%;
+}
+
+dt {
+	float:left;
+	width: 20%;
+	text-align: right;
+	padding: {
+		top: 3px;
+		bottom: 3px;
+	}
+}
+
+dd {
+	float: left;
+	width: 80%;
+	padding: {
+		top: 3px;
+		bottom: 3px;
+		left: 10px;
+	}
 }

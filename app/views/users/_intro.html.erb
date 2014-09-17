@@ -1,0 +1,10 @@
+<div class="section_title">
+	<h2>Introduction</h2>				
+	<%= render :layout => "shared/edit_modal", :locals => {:title => 'Bio'} do %>
+		<%= fields_for(@user) do |form| %>
+			<%= form.text_area :bio %>
+			<%= form.submit "Save changes", class: "btn btn-primary" %>
+		<% end %>
+	<% end %>
+</div>
+<p><%= @user.bio %></p>
