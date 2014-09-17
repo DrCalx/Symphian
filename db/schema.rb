@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903032355) do
+ActiveRecord::Schema.define(version: 20140917181324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20140903032355) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.string   "bio"
+    t.text     "bio"
     t.string   "zip"
     t.integer  "soundcloud_user_id"
     t.string   "soundcloud_username"
