@@ -3,36 +3,38 @@
 	margin-right: 15px;
 }
 
-#profile_header h1 {
-	float: left;
-	margin: 5px 0 0 0;
-}
-
 #profile_header {
 	padding-bottom: 15px;
 	border-bottom: 3px solid #333;
 	margin-bottom: 28px;
+	h1 {
+		float: left;
+		margin: 5px 0 0 0;
+	}
 }
 
-.section_title {
+#profile_body {
+	.bio_block {
+		.section_title {
 
-	/* border-bottom: 3px solid #888; */
+			/* border-bottom: 3px solid #888; */
 
-	& h2 {
-		text-align: left;
-		margin-top: 0px;
-	} 
+			h2 {
+				text-align: left;
+				float: left;
+				margin-top: 0px;
+			} 
 
-	& #edit_button {
-		margin-left: 50px;
-		margin-bottom: 30px;
-		margin-top: 30px;		
+			& #edit_button {
+				float: right;
+			}
+		}
+		border-bottom: 3px solid #333;
 	}
 }
 
 
 .bio_block {
-	border-bottom: 3px solid #333;
 	margin-bottom: 28px;
 }
 
