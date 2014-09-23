@@ -59,3 +59,7 @@ body {
 	margin-top: 45px;
 	@include box_sizing
 }
+
+#home_block {
+	border-bottom: 3px solid #333;
+}
