@@ -5,8 +5,8 @@
 	<div id="soundcloud_widget">						
 		<% if sc_logged_in? %>
 			<% @embed_info = current_user.soundcloud_client.get('/oembed', 
-														:url => "http://soundcloud.com/#{current_user.soundcloud_username}/favorites", 
-														:maxheight => 166) %>
+														:url => "http://soundcloud.com/#{current_user.soundcloud_username}/tracks", 
+														:maxheight => 450) %>
 			<div style="height:166px"><%= @embed_info['html'].html_safe %></div>
 			<%= link_to image_tag("btn-disconnect-m.png", :border => 0, :alt => "Disconnect from SoundCloud"),
 		soundcloud_disconnect_path, :class => "disconnect" %>

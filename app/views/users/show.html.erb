@@ -8,10 +8,15 @@
 	</div> <!-- #profile_header -->
 	<div id="profile_body" class="row">
 		<div id="profile_bio_col" class="col-md-5">
-			<%= render "glance" %>
+			<div class="bio_block row">
+				<%= render "glance" %>
+			</div>
+			<div class="bio_block row">
+				<%= render "openings/show" %>
+			</div>
 		</div> <!-- profile_bio_col -->
 		<div id="profile_social_col" class="col-md-7">
-			<div id="profile_about" class="bio_block row">
+			<div id="profile_about" class="bio_block">
 				<%= render "intro" %>
 			</div>
 			<div id="profile_media" class="bio_block row">
