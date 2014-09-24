@@ -17,14 +17,14 @@
 .bio_block {
 	border-bottom: 3px solid #333;
 	margin-bottom: 28px;
-}
-
-.section_title {
 	h2 {
 		text-align: left;
 		float: left;
 		margin-top: 0px;
 	} 
+}
+
+.section_title {
 
 	& .btn-edit {
 		float: right;
