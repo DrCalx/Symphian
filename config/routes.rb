@@ -21,6 +21,8 @@ Symphian::Application.routes.draw do
   match '/soundcloud/connected',  to: 'soundcloud#connected',   via: 'get'
   match '/soundcloud/disconnect', to: 'soundcloud#disconnect',  via: 'get'
 
+  match '/youtube', to: 'youtube#update', via: 'patch'
+
   get "static_pages/home"
   get "static_pages/about"
   # The priority is based upon order of creation: first created -> highest priority.
