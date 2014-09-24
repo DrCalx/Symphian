@@ -13,32 +13,25 @@
 	}
 }
 
-#profile_body {
-	.bio_block {
-		.section_title {
-
-			/* border-bottom: 3px solid #888; */
-
-			h2 {
-				text-align: left;
-				float: left;
-				margin-top: 0px;
-			} 
-
-			& #edit_button {
-				float: right;
-			}
-		}
-		border-bottom: 3px solid #333;
-	}
-}
-
 
 .bio_block {
+	border-bottom: 3px solid #333;
 	margin-bottom: 28px;
 }
 
-#edit_button {
+.section_title {
+	h2 {
+		text-align: left;
+		float: left;
+		margin-top: 0px;
+	} 
+
+	& .btn-edit {
+		float: right;
+	}
+}
+
+.btn-edit {
 	float: right;
 	margin-right: 50px;
 }
