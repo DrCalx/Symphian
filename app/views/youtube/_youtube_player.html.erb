@@ -1,11 +1,13 @@
-<div class="row"><h2>My Videos</h2></div>
-<% if signed_in? %>
-	<div class="row">		
-		<%= form_for @youtube do |f| %>
-			<%= f.text_field :playlist, :placeholder => "Enter your YouTube playlist URL" %>
-		<% end %>
+<div class="col-md-12">
+	<div class="row"><h2>My Videos</h2></div>
+	<% if signed_in? %>
+		<div class="row">		
+			<%= form_for @youtube do |f| %>
+				<%= f.text_field :playlist, :placeholder => "Enter your YouTube playlist URL" %>
+			<% end %>
+		</div>
+	<% end %>
+	<div class="row">
+		<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/?listType=playlist&list=<%=@youtube.playlist%>&theme=light"></iframe>
 	</div>
-<% end %>
-<div class="row">
-	<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/?listType=playlist&list=<%=@youtube.playlist%>&theme=light"></iframe>
 </div>

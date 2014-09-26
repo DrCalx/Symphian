@@ -15,8 +15,11 @@
 
 
 .bio_block {
-	border-bottom: 3px solid #333;
-	margin-bottom: 28px;
+	border-color:transparent;
+	border-style:solid;
+	border-width: 0px 0px 17px;
+	border-image: url(/assets/border-staff.png) 0 0 17 repeat;
+	/*margin-bottom: 28px;*/
 	h2 {
 		text-align: left;
 		float: left;

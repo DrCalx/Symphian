@@ -1,6 +1,6 @@
 <% if signed_in? %>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="home_block">
 				<h1>
 					<%= gravatar_for current_user %>
@@ -17,7 +17,7 @@
 				<%= render "feeds/feed" %>
 			</div>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="center jumbotron">
 				<h1>Welcome to Symphian</h1>
 				<h2>This is the <a href='#'>musician</a>'s network</h2>

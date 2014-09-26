@@ -35,13 +35,15 @@ body {
 #logo {
 	float: left;
 	margin-right: 10px;
+	margin-left: 10px;
 	font-size: 1.7em;
 	text-transform: capitalize;
-	color: $brand-primary;
+	color: #fff;
 	padding-top: 11px;
 	line-height: 1;
 	letter-spacing: -1px;
-	font-weight: bold;
+	font-weight: normal;
+	background-color: #111;
 	&:hover {
 		text-decoration:none;
 	}
