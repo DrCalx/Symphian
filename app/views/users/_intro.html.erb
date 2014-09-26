@@ -1,14 +1,21 @@
-<div class="col-md-12">
-	<div class="section_title row">
-		<h2>Introduction</h2>				
-		<%= render :layout => "shared/edit_modal", :locals => {:title => 'Bio', :id => 'bio'} do %>
-			<%= fields_for(@user) do |form| %>
-				<%= form.text_area :bio %>
-				<%= form.submit "Save changes", class: "btn btn-primary" %>
-			<% end %>
-		<% end %>
+<div class="row">
+	<div class="col-md-12">
+		<div class="section_title">	
+			<h2>Introduction</h2>
+			<%= render :layout => "shared/edit_modal", :locals => {:title => 'Bio', :id => 'bio'} do %>
+				<%= fields_for(@user) do |form| %>
+					<%= form.text_area :bio %>
+					<%= form.submit "Save changes", class: "btn btn-primary" %>
+				<% end %>
+			<% end %>	
+		</div>
 	</div>
-	<div class="section_bio row">
-		<p><%= @user.bio %></p>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="section_bio">
+			<p><%= @user.bio %></p>
+		</div>
 	</div>
 </div>

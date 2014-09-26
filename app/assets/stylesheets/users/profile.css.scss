@@ -7,14 +7,16 @@
 	padding-bottom: 15px;
 	border-bottom: 3px solid #333;
 	margin-bottom: 28px;
+	margin-top: 15px;
 	h1 {
 		float: left;
 		margin: 5px 0 0 0;
 	}
 }
 
-
 .bio_block {
+	margin-top: 15px;
+	padding-bottom: 10px;
 	border-color:transparent;
 	border-style:solid;
 	border-width: 0px 0px 17px;
@@ -24,14 +26,8 @@
 		text-align: left;
 		float: left;
 		margin-top: 0px;
+		margin-bottom: 15px;
 	} 
-}
-
-.section_title {
-
-	& .btn-edit {
-		float: right;
-	}
 }
 
 .btn-edit {
