@@ -1,21 +1,20 @@
 #profile_header .gravatar {
 	float: left;
 	margin-right: 15px;
+	margin-top:0px;
 }
 
-#profile_header {
-	padding-bottom: 15px;
-	border-bottom: 3px solid #333;
-	margin-bottom: 28px;
-	margin-top: 15px;
-	h1 {
+#profile_header {	
+	margin-bottom: 43px;
+	margin-top: 0px;
+	h1 {		
 		float: left;
-		margin: 5px 0 0 0;
+		margin: 26px 0 0 10px
 	}
 }
 
 .bio_block {
-	margin-top: 15px;
+	margin-top: 19px;
 	padding-bottom: 10px;
 	border-color:transparent;
 	border-style:solid;
