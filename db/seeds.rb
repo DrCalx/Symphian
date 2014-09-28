@@ -44,3 +44,17 @@ end
 ].each do |genre|
 	Genre.find_or_create_by_name(genre)
 end
+
+[
+{name:"Part Time"},
+{name:"Full Time"},
+{name:"Jam"},
+{name:"Gig"},
+{name:"Lessons"},
+{name:"Internship"},
+{name:"Contract"},
+{name:"Band"},
+{name:"Ensemble"},
+].each do |type|
+	ListingType.find_or_create_by_name(type)
+end
