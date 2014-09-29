@@ -5,7 +5,7 @@ body {
 }
 
 .sheet {
-	background-color: #E9E8CB;
+	background-color: #F8F8E3;
 	border-radius: 2px;
 }
 
@@ -17,7 +17,11 @@ h1 {
 	font-size: 3em;
 	letter-spacing: -2px;
 	text-align: center;
-	margin-bottom: 30px;
+	padding-top: 25px;
+	padding-bottom: 30px;
+	margin-bottom: 50px;
+	border-width: 0px 0px 17px;
+	border-image: url(/assets/border-staff.png) 0 0 17 repeat;
 }
 
 h2 {
