@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 	has_many :user_played_instruments, dependent: :destroy
 	has_many :instruments, through: :user_played_instruments
 
+	has_many :listings, dependent: :destroy
+
 	has_and_belongs_to_many :genres
 
 	has_secure_password #Thanks Rails!
