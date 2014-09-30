@@ -2,6 +2,7 @@
 	<div class="container">
 		<a href="/" id="logo">Symphian<sub>&alpha;</sub></a>
 		<ul class="nav navbar-nav navbar-right">
+		<%= link_to "Log Out", signout_path, :method => "delete", :class => "btn btn-md btn-default" %>
 		<%= link_to "Edit Profile", current_user, :class => "btn btn-md btn-primary" %>
 <!-- 			<li><%= link_to "Home", root_path %></li>
 			<li><%= link_to "About", about_path %></li>
