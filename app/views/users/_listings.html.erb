@@ -1,5 +1,14 @@
-<h2>My Listings</h2>
-<%= render :layout => "shared/edit_modal", :locals => {:title => 'New Listing', :id => 'listing'} do %>
-	<%= render "listings/form" %>
-<% end %>	
-<%= render current_user.listings %>
+<div class="row">
+	<div class="col-md-12">
+		<h2>My Listings</h2>
+		<%= render :layout => "shared/edit_modal", :locals => {:title => 'New Listing', :id => 'listing'} do %>
+			<%= render "listings/form" %>
+		<% end %>	
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<%= render "shared/listing_list" %>
+	</div>
+</div>

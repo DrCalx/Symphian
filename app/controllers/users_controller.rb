@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@instruments = @user.instruments
 		@quack = @user.instruments.collect { |instrument| instrument.id }
-		@openings = Opening.where(:zip => @user.zip, :instrument_id => @quack)
+		@listing = @user.listings.build
+		@listings = @user.listings
 
 		@youtube = @user.youtube ||= Youtube.new
 	end

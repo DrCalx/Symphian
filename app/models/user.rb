@@ -94,6 +94,10 @@ class User < ActiveRecord::Base
 		return client
 	end
 
+	def listings
+		Listing.where("user_id = ?", id)
+	end
+
 	#---------------- Private ------------------
 
 	private
