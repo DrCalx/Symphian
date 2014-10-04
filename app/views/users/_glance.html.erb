@@ -4,7 +4,7 @@
 			<dt>Zip</dt>
 			<dd id="profile_zip">
 				<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
-					<%= fields_for(@user) do |f| %>
+					<%= form_for(@user) do |f| %>
 						<%= f.text_field :zip %>
 						<%= f.submit "Save changes", class: "btn btn-primary" %>
 					<% end %>
