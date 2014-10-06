@@ -9,9 +9,12 @@
 		<% if signed_in? %>
 				<%= form_for @youtube do |f| %>
 					<%= f.label :playlist, 'Playlist ID' %>
-					<%= f.text_field :playlist, :placeholder => "Enter your YouTube playlist URL" %>
+					<%= f.text_field :playlist, :placeholder => "Enter your YouTube playlist ID" %>
 				<% end %>
 		<% end %>
-		<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/?listType=playlist&list=<%=@youtube.playlist%>&theme=light"></iframe>
+
+		<% unless @youtube.playlist.blank? %>
+			<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/?listType=playlist&list=<%=@youtube.playlist%>&theme=light"></iframe>
+		<% end %>
 	</div>
 </div>

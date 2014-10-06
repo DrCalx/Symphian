@@ -1,7 +1,7 @@
 
 <div class="section_title row">
 	<div id="profile_soundcloud" class="col-md-12">
-		<h2>My Media</h2>
+		<h2>My Sounds</h2>
 		<% if sc_logged_in? %>
 			<%= link_to image_tag("btn-disconnect-m.png", :border => 0, :alt => "Disconnect from SoundCloud"),soundcloud_disconnect_path, :class => "disconnect scbutton btn-edit" %>
 		<% else %>
@@ -16,4 +16,6 @@
 												:url => "http://soundcloud.com/#{current_user.soundcloud_username}/tracks", 
 												:maxheight => 450) %>
 	<div style="height:450px"><%= @embed_info['html'].html_safe %></div>
+<% else %>
+	Log into SoundCloud and start sharing your recordings!
 <% end %>
