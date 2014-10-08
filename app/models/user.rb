@@ -62,8 +62,8 @@ class User < ActiveRecord::Base
 
 	#---------------------- SoundCloud ----------------------
 
-	SOUNDCLOUD_CLIENT_ID			= "e4766e375be7af45b4943567c94f0206"
-	SOUNDCLOUD_CLIENT_SECRET 	= "fa58decf55d7638e3867e7bbab300887"
+	SOUNDCLOUD_CLIENT_ID			= Settings.soundcloud_client_id
+	SOUNDCLOUD_CLIENT_SECRET 	= Settings.soundcloud_client_secret
 
 	def self.soundcloud_client(options = {})
 		options = {

@@ -12,10 +12,14 @@
 
 
 <% if sc_logged_in? %>
+	<% if params[:genreStation] %>
+		<% current_user.soundcloud_client.get('/tracks',  :genres => 'punk') %>
+	<% else %>
 	<% @embed_info = current_user.soundcloud_client.get('/oembed', 
 												:url => "http://soundcloud.com/#{current_user.soundcloud_username}/tracks", 
 												:maxheight => 450) %>
 	<div style="height:450px"><%= @embed_info['html'].html_safe %></div>
+	<% end %>
 <% else %>
 	Log into SoundCloud and start sharing your recordings!
 <% end %>

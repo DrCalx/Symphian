@@ -19,7 +19,7 @@ gem 'soundcloud', '0.3.2'
 
 #gem 'feedjira', '~> 1.0'
 
-# Use sqlite3 as the database for Active Record
+gem 'rails_config'
 
 group :development, :test do
 	gem 'spork-rails', '4.0.0'
