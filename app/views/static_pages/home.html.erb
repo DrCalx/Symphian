@@ -17,8 +17,14 @@
 		<div class="col-md-4">
 			<div class="soundcloud-stream home_block">
 				<h3>SoundCloud Radio</h3>
-				<%= sc_connect_link %> 
-				<p>To hear music based on your preferences!</p>
+				<% if sc_logged_in? %>
+					<p>Here's a song you might like:</p>
+					<%= render :partial => "soundcloud/soundcloud_player", :locals => {:genreStation => true} %>
+				<% else %>
+					<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud"), soundcloud_connect_path, :class => "connect scbutton btn-edit" %>
+					<p>To hear music based on your preferences!</p>
+				<% end %>
+
 			</div>
 		</div>
 		<div class="col-md-4">
