@@ -1,16 +1,14 @@
 <% genreStation ||= false %>
 
-<% if sc_logged_in? %>
-	<% if genreStation %>
-		<% track = current_user.soundcloud_client.get('/tracks',  :genres => 'punk').shuffle.first.permalink_url %>
-		<% embed = current_user.soundcloud_client.get('/oembed', :url => track, :maxheight => 166) %>
-		<%= embed['html'].html_safe %>
-	<% else %>
-	<% @embed_info = current_user.soundcloud_client.get('/oembed', 
-												:url => "http://soundcloud.com/#{current_user.soundcloud_username}/tracks", 
-												:maxheight => 450) %>
-	<div style="height:450px"><%= @embed_info['html'].html_safe %></div>
-	<% end %>
+<% if genreStation %>
+	<% genre_names = current_user.genres.map{|n| n.name}.join(', ').downcase %>
+	<% puts current_user.soundcloud_client.client_id %>
+	<% track = current_user.soundcloud_client.get('/tracks',  :genres => 'punk').shuffle.first.permalink_url %>
+	<% embed = current_user.soundcloud_client.get('/oembed', :url => track, :maxheight => 166) %>
+	<%= embed['html'].html_safe %>
 <% else %>
-	Log into SoundCloud and start sharing your recordings!
+	<% @embed_info = current_user.soundcloud_client.get('/oembed', 
+											:url => "http://soundcloud.com/#{current_user.soundcloud_username}/tracks", 
+											:maxheight => 450) %>
+	<div style="height:450px"><%= @embed_info['html'].html_safe %></div>
 <% end %>

@@ -21,8 +21,7 @@
 					<p>Here's a song you might like:</p>
 					<%= render :partial => "soundcloud/soundcloud_player", :locals => {:genreStation => true} %>
 				<% else %>
-					<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud"), soundcloud_connect_path, :class => "connect scbutton btn-edit" %>
-					<p>To hear music based on your preferences!</p>
+					<p>Update your <%= link_to "profile", current_user %> with a SoundCloud account to hear music based on your preferences!</p>
 				<% end %>
 
 			</div>
