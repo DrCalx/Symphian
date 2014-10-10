@@ -2,8 +2,8 @@
 
 <% if genreStation %>
 	<% genre_names = current_user.genres.map{|n| n.name}.join(', ').downcase %>
-	<% puts current_user.soundcloud_client.client_id %>
-	<% track = current_user.soundcloud_client.get('/tracks',  :genres => 'punk').shuffle.first.permalink_url %>
+	<% puts genre_names %>
+	<% track = current_user.soundcloud_client.get('/tracks',  :genres => genre_names).shuffle.first.permalink_url %>
 	<% embed = current_user.soundcloud_client.get('/oembed', :url => track, :maxheight => 166) %>
 	<%= embed['html'].html_safe %>
 <% else %>

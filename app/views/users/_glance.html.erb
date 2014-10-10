@@ -29,7 +29,7 @@
 																	:title => 'Genres'} do %>
 					<%= render "genres/select" %>
 				<% end %>
-				<%= render @user.genres %>
+				<%= @user.genres.map(&:name).join(", ") %>
 			</dd>
 
 			<dt>Groups</dt>
