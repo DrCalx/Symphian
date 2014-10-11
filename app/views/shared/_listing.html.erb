@@ -1,0 +1,12 @@
+<li id="<%= listing.id %>">
+	<span class="title">
+		<h3><%= listing.title %></h3>
+	</span>
+	<span class="content">
+		<%= listing.description %>
+	</span>
+	<br>
+	<span class="time">
+		<small>Listed by <%= listing.user.name + " " + time_ago_in_words(listing.created_at) %> ago.</small>
+	</span>
+</li>

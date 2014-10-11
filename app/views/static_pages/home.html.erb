@@ -19,7 +19,7 @@
 				<h3>SoundCloud Radio</h3>
 				<% if sc_logged_in? %>
 					<p>Here's a song you might like:</p>
-					<%= render :partial => "soundcloud/soundcloud_player", :locals => {:genreStation => true} %>
+					<%= render :partial => "soundcloud/soundcloud_player", :locals => {:genreStation => false} %>
 				<% else %>
 					<p>Update your <%= link_to "profile", current_user %> with a SoundCloud account to hear music based on your preferences!</p>
 				<% end %>
@@ -28,24 +28,10 @@
 		</div>
 		<div class="col-md-4">
 			<div class="home_block">
-				<%= render "openings/show" %>
+				<%= render "shared/listings" %>
 			</div>
 		</div>
 	</div>
-	<!-- 
-
-			<ul class="nav nav-tabs" role="tablist">
-				<li class="active"><a href="#local" role="tab" data-toggle="tab">Local</a></li>
-				<li><a href="#regional" role="tab" data-toggle="tab">Regional</a></li>
-				<li><a href="#global" role="tab" data-toggle="tab">Global</a></li>
-			</ul>
-
-			<div class="tab-content">
-				<div class="tab-pane active" id="local">Local local local<p>local</p><p>local Local Local local local.</p></div>
-				<div class="tab-pane" id="regional">regional regional regional<p>regional</p><p>regional regional regional regional regional.</p></div>
-				<div class="tab-pane" id="global">global global global<p>global</p><p>global global global global global.</p></div>
-			</div> -->
-
 <% else %>
 	<div class="center jumbotron">
 		<h1>Welcome to Symphian</h1>

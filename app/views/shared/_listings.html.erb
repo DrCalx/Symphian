@@ -1,0 +1,18 @@
+	<h3>Local Happenings</h3>
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#global" role="tab" data-toggle="tab">Global</a></li>
+		<li><a href="#local" role="tab" data-toggle="tab">Local</a></li>
+		<!--<li><a href="#regional" role="tab" data-toggle="tab">Regional</a></li>-->
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="local">
+			<ul>
+				<%= render partial: "shared/listing", collection: @listings %>
+			</ul>
+		</div>				
+		<div class="tab-pane" id="global">				
+			<ul>
+					<%= render partial: "shared/listing", collection: @listings %>
+			</ul>
+		</div>
+	</div>
