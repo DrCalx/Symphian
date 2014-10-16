@@ -1,0 +1,7 @@
+<% genreStation ||= false %>
+
+<% if genreStation %>
+	<%= current_user.embed_genre_player %>
+<% else %>
+	<div style="height:450px"><%= current_user.embed_user_tracks['html'].html_safe %></div>
+<% end %>

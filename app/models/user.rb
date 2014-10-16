@@ -60,8 +60,7 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s) #Hash the token so no one can steal it from the db
 	end
 
-	#---------------------- SoundCloud ----------------------
-
+	#----------------Soundcloud------------
 	SOUNDCLOUD_CLIENT_ID			= Settings.soundcloud_client_id
 	SOUNDCLOUD_CLIENT_SECRET 	= Settings.soundcloud_client_secret
 
@@ -94,11 +93,28 @@ class User < ActiveRecord::Base
 		return client
 	end
 
-	def listings
-		Listing.where("user_id = ?", id)
+	def embed_user_tracks
+		soundcloud_client.get('/oembed', 
+											:url => "http://soundcloud.com/#{soundcloud_username}/tracks", 
+											:maxheight => 450)		
 	end
 
+	def embed_genre_player
+		genre_names = genres.map{|n| n.name}.join(', ').downcase
+		tracks = soundcloud_client.get('/tracks',  :genres => "rock")
+		url = tracks.shuffle.first.permalink_url
+
+
+		embed = soundcloud_client.get('/oembed', :url => "http://soundcloud.com/#{soundcloud_username}/tracks", :maxheight => 166)
+
+
+
+		embed['html'].html_safe
+	end
+
+
 	#---------------- Private ------------------
+
 
 	private
 		def create_remember_token

@@ -19,7 +19,7 @@
 				<h3>SoundCloud Radio</h3>
 				<% if sc_logged_in? %>
 					<p>Here's a song you might like:</p>
-					<%= render :partial => "soundcloud/soundcloud_player", :locals => {:genreStation => false} %>
+					<%= render :partial => "soundcloud/player", :locals => {:genreStation => true} %>
 				<% else %>
 					<p>Update your <%= link_to "profile", current_user %> with a SoundCloud account to hear music based on your preferences!</p>
 				<% end %>
