@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   	if signed_in?
   		@openings = Opening.where(:zip => current_user.zip, :instrument_id => @quack)
   		@listings = Listing.all
+  		@player = Soundcloud.genre_player
   	end
   end
 
