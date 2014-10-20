@@ -69,6 +69,8 @@ class User < ActiveRecord::Base
 			:client_id 			=> SOUNDCLOUD_CLIENT_ID,
 			:client_secret 	=> SOUNDCLOUD_CLIENT_SECRET
 		}.merge(options)
+
+		SoundCloud.new(options)
 	end
 
 	def soundcloud_client(options = {})

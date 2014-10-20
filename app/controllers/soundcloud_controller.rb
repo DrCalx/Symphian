@@ -12,6 +12,7 @@ class SoundcloudController < ApplicationController
 
 	def connected
 		if params[:error].nil?
+			
 			soundcloud_client.exchange_token(:code => params[:code])
 			me = soundcloud_client.get("/me")
 
