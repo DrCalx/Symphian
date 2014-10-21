@@ -18,7 +18,9 @@ test:
 
 production:
   adapter: postgresql
-  database: symphian_test
+  encoding: unicode
+  host: localhost
+  database: symphian_dev
   pool: 5
   timeout: 5000
   username: postgres
