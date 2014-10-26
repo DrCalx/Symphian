@@ -13,5 +13,11 @@ module Symphian
 
 			embed['html'].html_safe
 		end
+
+		def user_player(user)		
+			embed = user.soundcloud_client.get('/oembed', 
+											:url => "http://soundcloud.com/#{user.soundcloud_username}/tracks", 
+											:maxheight => 450)	
+		end
 	end
 end
