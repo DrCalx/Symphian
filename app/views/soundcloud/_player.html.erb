@@ -1,7 +1,14 @@
 <% genreStation ||= false %>
 
 <% if genreStation %>
-	<%= player %>
+	<% genre = current_user.genres.shuffle.first.name %>
+	<% tracks = current_user.soundcloud_client.get('/tracks',  :genres => genre) %>
+	
+	<% url = tracks.shuffle.first.permalink_url %>
+
+	<% embed = current_user.soundcloud_client.get('/oembed', :url => url, :maxheight => 166) %>
+
+	<%= embed['html'].html_safe %>
 <% else %>
 	<div style="height:450px"><%= current_user.embed_user_tracks['html'].html_safe %></div>
 <% end %>

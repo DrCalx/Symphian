@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
 	end
 
 	#----------------Soundcloud------------
+	
 	SOUNDCLOUD_CLIENT_ID			= Settings.soundcloud_client_id
 	SOUNDCLOUD_CLIENT_SECRET 	= Settings.soundcloud_client_secret
 
