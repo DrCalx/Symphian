@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
 			self.update_attributes!({
 				:soundcloud_access_token 	=> client.access_token,
 				:soundcloud_refresh_token => client.refresh_token,
-				:soundclout_expires_at 		=> client.expires_at,
+				:soundcloud_expires_at 		=> client.expires_at,
 				})
 		end
 

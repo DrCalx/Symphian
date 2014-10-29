@@ -6,7 +6,7 @@
 	
 	<% url = tracks.shuffle.first.permalink_url %>
 
-	<% embed = current_user.soundcloud_client.get('/oembed', :url => url, :maxheight => 166) %>
+	<% begin; embed = current_user.soundcloud_client.get('/oembed', :url => url, :maxheight => 166); rescue => e; end %>
 
 	<%= embed['html'].html_safe %>
 <% else %>
