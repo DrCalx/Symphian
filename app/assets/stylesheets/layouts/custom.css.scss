@@ -1,5 +1,4 @@
-$brand-primary: #3366CC;
-
+$brand-primary: #3E3E42;
 
 @import "bootstrap";
 
@@ -30,7 +29,7 @@ textarea {
 }
 
 body {
-	color: #333;
+	color: $gray-dark;
 }
 
 #logo {
@@ -39,7 +38,7 @@ body {
 	margin-left: 10px;
 	font-size: 1.7em;
 	text-transform: capitalize;
-	color: #fff;
+	color: $gray-lighter;
 	padding-top: 11px;
 	line-height: 1;
 	letter-spacing: -1px;
