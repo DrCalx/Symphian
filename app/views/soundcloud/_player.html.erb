@@ -1,6 +1,6 @@
 <% genreStation ||= false %>
 
-<% if genreStation %>
+<% if genreStation and current_user.genres.present? %>
 	<% genre = current_user.genres.shuffle.first.name %>
 	<% tracks = current_user.soundcloud_client.get('/tracks',  :genres => genre) %>
 	
