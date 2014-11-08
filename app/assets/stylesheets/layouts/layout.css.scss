@@ -5,16 +5,12 @@ $brand-primary: #3E3E42;
 @import "body";
 @import "footer";
 @import "header";
-@import "forms";
-
 
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-
-
 
 html {
 	overflow-y: scroll;
