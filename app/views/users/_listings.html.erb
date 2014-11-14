@@ -9,6 +9,10 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<%= render partial: "shared/listing", collection: current_user.listings %>
+		<div class="listings">
+			<ul>
+				<%= render partial: "shared/listing", collection: current_user.listings %>
+			</ul>
+		</div>
 	</div>
 </div>

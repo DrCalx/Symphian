@@ -2,15 +2,14 @@
 	<span class="title">
 		<h3><%= listing.title %></h3>
 	</span>
-	<span class="type">
-		<small>
-			<%= listing.listing_type.name %>
-		</small>
 	<span class="content">
 		<%= listing.description %>
 	</span>
 	<br>
-	<span class="time">
-		<small>Listed by <%= listing.user.name + " " + time_ago_in_words(listing.created_at) %> ago.</small>
+	<span class="type_time">
+		<small type="type">
+			(<%= listing.listing_type.name %>) 
+		</small>	
+		<small type="time">Listed by <%= listing.user.name + " " + time_ago_in_words(listing.created_at) %> ago.</small>
 	</span>
 </li>
