@@ -19,3 +19,25 @@
 		vertical-align: center;
 	}
 }
+
+//careful with this. Bootstrap will fuck around with padding
+
+.welcome {
+	.gravatar {
+		float: left;
+		padding-bottom: 10px;
+		padding-left: 10px;
+	}
+	h1 {
+		text-align: left;
+		margin-top: 10px;
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
+
+	h2 {
+		text-align: left;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+	}
+}
