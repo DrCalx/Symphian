@@ -1,7 +1,11 @@
-<li id="<%= listing.id %>">
+<li id="<%= listing.id %>" class="listing">
 	<span class="title">
 		<h3><%= listing.title %></h3>
 	</span>
+	<span class="type">
+		<small>
+			<%= listing.listing_type.name %>
+		</small>
 	<span class="content">
 		<%= listing.description %>
 	</span>
