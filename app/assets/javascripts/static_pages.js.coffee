@@ -2,8 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$( document ).ready(function() { 
-	$("a").click(function(event) {
-		alert("hi");
-	});
-});
+$(document).ready ->
+	$("a").click(event) ->
+		alert "hi"
+	return
+return
