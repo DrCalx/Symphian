@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
 
 ruby '2.1.4'
-#when it comes time to upgrade to ruby 2.0, use pik to switch back and forth
-#at this time, it seems that other gems may not play along nicely on Windows
-#ruby '2.0.0'
 
-gem 'rails', 	'4.0.8'
+gem 'rails', 	'4.1.7'
 gem 'pg', 		'0.15.1'
 gem 'webrick', '1.3.1'
 
@@ -29,7 +26,7 @@ group :development do
 end
 
 group :test do
-	gem 'minitest-reporters', 	'~> 1.0'
+	gem 'minitest-reporters', 	'>= 1.0'
 	gem 'mini_backtrace', 			'~> 0.1'
 	gem 'guard-minitest', 			'~> 2.3'
 end
