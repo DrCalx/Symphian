@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.1.4'
 #when it comes time to upgrade to ruby 2.0, use pik to switch back and forth
 #at this time, it seems that other gems may not play along nicely on Windows
 #ruby '2.0.0'
@@ -31,7 +31,7 @@ group :development do
 	gem 'rspec-rails', 	'2.13.1'
 	gem 'faker', '1.4.3'
 	gem 'pry'
-	gem 'pry-debugger'
+	gem 'pry-byebug'
 end
 
 group :test do
