@@ -21,12 +21,6 @@ gem 'soundcloud', '0.3.2'
 
 gem 'rails_config'
 
-group :development, :test do
-	gem 'spork-rails', '4.0.0'
-	gem 'guard-spork', '1.5.0'
-	gem 'childprocess', '0.3.6'
-end
-
 group :development do
 	gem 'rspec-rails', 	'2.13.1'
 	gem 'faker', '1.4.3'
@@ -35,9 +29,9 @@ group :development do
 end
 
 group :test do
-	gem 'selenium-webdriver', '2.35.1'
-	gem 'capybara', '2.1.0'
-	gem 'factory_girl_rails', '4.2.0'
+	gem 'minitest-reporters', 	'~> 1.0'
+	gem 'mini_backtrace', 			'~> 0.1'
+	gem 'guard-minitest', 			'~> 2.3'
 end
 
 gem 'uglifier', 			'2.1.1'
