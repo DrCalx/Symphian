@@ -33,3 +33,6 @@ config/environments/*.local.yml
 
 # Ignore C9 local environment metadata
 .c9/
+
+# Ignore spring files
+/spring/*.pid

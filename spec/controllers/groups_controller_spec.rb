@@ -1,5 +1,4 @@
-require 'spec_helper'
+require 'test_helper'
 
-describe GroupsController do
-
+class GroupsControllerTest < ActionController::TestCase
 end

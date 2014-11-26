@@ -1,5 +1,7 @@
 require 'spec_helper'
 
-describe ListingsController do
+class ListingsControllerTest < ActionController::TestCase
+  
+  test ""
 
 end

@@ -1,17 +1,18 @@
 development:
+  host: localhost
   adapter: postgresql
   encoding: unicode
-  host: localhost
   database: symphian_dev
   pool: 5
   timeout: 5000
   username: postgres
   password: Pluto64Post
-  template: template0
 
 test:
+  host: localhost
   adapter: postgresql
-  database: symphian_test
+  encoding: unicode
+  database: symphian_dev
   pool: 5
   timeout: 5000
   username: postgres
