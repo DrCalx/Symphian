@@ -33,4 +33,7 @@ Symphian::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  
+  #minitest warns me about this. This will become default behavior in Rails 5
+  config.active_support.test_order = :sorted
 end
