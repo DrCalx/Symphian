@@ -28,7 +28,14 @@ body {
 	color: $gray-dark;
 }
 
+img {
+	width: 10%;
+	height: auto;
+}
+
 #logo {
+	width: 30%;
+	height: auto;
 	float: left;
 	margin-right: 10px;
 	margin-left: 10px;
