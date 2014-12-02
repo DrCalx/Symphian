@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def full_title(sub_title)
+	def full_title(sub_title = "")
 		base_title = "Symphian"
 		if sub_title.empty?
 			base_title
