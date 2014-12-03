@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
 
 	has_one :youtube, dependent: :destroy
 	
+	attr_accessor :remember_token
+	
 
 	#------------------ Groups ---------------------
 
@@ -57,7 +59,17 @@ class User < ActiveRecord::Base
 	end
 
 	def User.digest(token)
-		Digest::SHA1.hexdigest(token.to_s) #Hash the token so no one can steal it from the db
+		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+		BCrypt::Password.create(token, cost: cost)
+	end
+	
+	def remember
+		self.remember_token = User.new_remember_token
+		update_attribute(:remember_digest, User.digest(remember_token))
+	end
+	
+	def authenticated?(remember_token)
+		BCrypt::Password.new(remember_digest).is_password?(remember_token)
 	end
 
 	#----------------Soundcloud------------
