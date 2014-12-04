@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114210105) do
+ActiveRecord::Schema.define(version: 20141204161412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "genres", force: true do |t|
-    t.string   "name"
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,28 +33,28 @@ ActiveRecord::Schema.define(version: 20141114210105) do
   end
 
   create_table "groups", force: true do |t|
-    t.string   "name"
-    t.string   "zip"
+    t.string   "name",       limit: 255
+    t.string   "zip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "bio"
+    t.string   "bio",        limit: 255
   end
 
   create_table "instruments", force: true do |t|
-    t.string   "name"
-    t.string   "category"
+    t.string   "name",       limit: 255
+    t.string   "category",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "listing_types", force: true do |t|
-    t.string   "name"
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "listings", force: true do |t|
-    t.string   "title"
+    t.string   "title",           limit: 255
     t.text     "description"
     t.integer  "listing_type_id"
     t.datetime "created_at"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20141114210105) do
   create_table "openings", force: true do |t|
     t.integer  "group_id"
     t.integer  "instrument_id"
-    t.string   "zip"
+    t.string   "zip",           limit: 255
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -91,26 +91,26 @@ ActiveRecord::Schema.define(version: 20141114210105) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+    t.string   "name",                     limit: 255
+    t.string   "email",                    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
-    t.string   "remember_token"
+    t.string   "password_digest",          limit: 255
+    t.string   "remember_digest",          limit: 255
     t.text     "bio"
-    t.string   "zip"
+    t.string   "zip",                      limit: 255
     t.integer  "soundcloud_user_id"
-    t.string   "soundcloud_username"
-    t.string   "soundcloud_access_token"
-    t.string   "soundcloud_refresh_token"
+    t.string   "soundcloud_username",      limit: 255
+    t.string   "soundcloud_access_token",  limit: 255
+    t.string   "soundcloud_refresh_token", limit: 255
     t.datetime "soundcloud_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  add_index "users", ["remember_digest"], name: "index_users_on_remember_digest", using: :btree
 
   create_table "youtubes", force: true do |t|
-    t.string   "playlist"
+    t.string   "playlist",   limit: 255
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
