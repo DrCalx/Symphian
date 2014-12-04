@@ -1,0 +1,15 @@
+listing_old:
+  description: "This iss an old posting"
+  created_at: <%= 10.minutes.ago %>
+  
+listing_older:
+  description: "This listing is a year old"
+  created_at: <%= 1.year.ago %>
+  
+listing_semiold:
+  description: "This listing is 3 days old"
+  created_at: <%= 3.days.ago %>
+  
+listing_rightnow:
+  description: "This listing was created right now"
+  created_at: <%= Time.zone.now %>
