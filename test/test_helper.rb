@@ -10,4 +10,22 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   include ApplicationHelper
+  
+  def sign_in_as(user, options = {})
+    password = options[:password] || 'Pass123'
+    
+    if integration_test?
+      get signin_path
+      post signin_path, session: { email: user.email,
+                                  password: password}
+    else
+      session[:user_id] = user.id
+    end
+  end
+  
+  private
+    #Seems hacky to me, but some online guy did it this way
+    def integration_test?
+      defined?(post_via_redirect)
+    end
 end

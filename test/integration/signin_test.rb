@@ -6,8 +6,7 @@ class SigninTest < ActionDispatch::IntegrationTest
   end
   
   test "signin with valid information" do
-    get signin_path
-    post signin_path, session: {email: @user.email, password: 'pass123'}
+    post signin_path, session: {email: @user.email, password: 'Pass123'}
     assert_redirected_to @user
     follow_redirect!
     assert_template 'users/show'

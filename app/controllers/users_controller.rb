@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	
 	before_action :ensure_signed_in, only: [:update]
 	
 	def show
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
 		
 		def ensure_signed_in
 			unless signed_in?
-				flash[:danger] = "Please log in."
+				flash[:danger] = "Please log in to continue."
 				redirect_to signin_url
 			end
 		end

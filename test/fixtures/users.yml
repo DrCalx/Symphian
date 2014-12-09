@@ -1,9 +1,9 @@
 matt:
-  name: Marvin Example
-  email: marvin@example.com
-  password_digest: <%= User.digest('pass123') %>
+  name: Matthew Example
+  email: matthew@example.com
+  password_digest: <%= User.digest('Pass123') %>
   
 trudy:
   name: Trudy Norling
   email: trudy@example.com
-  password_digest: <%= User.digest('tn1414') %>
+  password_digest: <%= User.digest('Pass123') %>
