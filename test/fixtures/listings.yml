@@ -1,29 +1,29 @@
 listing_old:
-  user_id: 1
+  user: matt
   description: "This iss an old posting"
   created_at: <%= 10.minutes.ago %>
   listing_type_id: 1
   
 listing_older:
-  user_id: 1
+  user: matt
   description: "This listing is a year old"
   created_at: <%= 1.year.ago %>
   listing_type_id: 1
   
 listing_semiold:
-  user_id: 1
+  user: matt
   description: "This listing is 3 days old"
   created_at: <%= 3.days.ago %>
   listing_type_id: 1
   
 listing_rightnow:
-  user_id: 1
+  user: matt
   description: "This listing was created right now"
   created_at: <%= Time.zone.now %>
   listing_type_id: 1
   
 someone_elses_listing:
-  user_id: 2
+  user: matt
   description: "Someone elses listing"
   created_at: <%= 5.minutes.ago %>
   listing_type_id: 1

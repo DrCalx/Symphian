@@ -1,4 +1,7 @@
 class ListingsController < ApplicationController
+	
+	before_action :ensure_signed_in, only: [:create, :distroy]
+	
 	def create
 		@listing = current_user.listings.build(listing_params)
 		if @listing.save
