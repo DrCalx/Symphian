@@ -23,7 +23,7 @@ listing_rightnow:
   listing_type_id: 1
   
 someone_elses_listing:
-  user: matt
+  user: trudy
   description: "Someone elses listing"
   created_at: <%= 5.minutes.ago %>
   listing_type_id: 1
