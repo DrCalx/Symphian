@@ -2,8 +2,9 @@ require 'test_helper'
 
 class ListingTest < ActiveSupport::TestCase
   def setup
+    @type = listing_types(:rock)
     @user = users(:matt)
-    @listing = @user.listings.build(listing_type_id: 1, description: "Test 123", user_id: @user.id)
+    @listing = @user.listings.build(listing_type: @type, description: "Test 123")
   end
   
   test "should be valid" do

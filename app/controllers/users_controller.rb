@@ -6,10 +6,9 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@instruments = @user.instruments
 		@quack = @user.instruments.collect { |instrument| instrument.id }
-		
 		@listings = @user.listings
-
 		@youtube = @user.youtube ||= Youtube.new
+		@listing = Listing.new
 	end
 
 	def index

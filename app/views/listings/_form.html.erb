@@ -1,8 +1,5 @@
 
 <%= form_for @listing, :html => {:role => "form", :class => "form-vertical"} do |f| %>
-	<%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= f.hidden_field :zip, :value => current_user.zip %>
-
 	<%= f.label :listing_type %>
 	<%= f.collection_select :listing_type_id, ListingType.order(:name),:id,:name %>
 
