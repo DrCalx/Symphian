@@ -10,6 +10,6 @@
 		<small type="type">
 			<%= listing.listing_type.name %>
 		</small>	
-		<small type="time">Listed by <%= listing.user.name + " " + time_ago_in_words(listing.created_at) %> ago.</small>
+		<small type="time">Listed by <%= link_to listing.user.name, user_path(listing.user) %> <%= time_ago_in_words(listing.created_at) %> ago.</small>
 	</span>
 </li>
