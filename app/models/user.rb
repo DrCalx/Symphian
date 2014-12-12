@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
 	
 	attr_accessor :remember_token
 	
+	scope :starts_with, ->(name) { where("name like ?", "#{name}%") }
+	
 
 	#------------------ Groups ---------------------
 

@@ -6,6 +6,7 @@
 				<%= link_to "Edit Profile", current_user, :class => "btn btn-md btn-primary" %>
 				<%= link_to "Home Page", root_path, :class => "btn btn-md btn-primary" %>
 				<%= link_to "Log Out", signout_path, :method => "delete", :class => "btn btn-md btn-default" %>
+				<%= render "shared/search_form" %>
 			<% else %>
 				<%= link_to "Sign me in", signin_path, class: "btn btn-success" %>
 				<%= link_to "Sign me up", signup_path, class: "btn btn-primary" %>
