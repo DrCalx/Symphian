@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204161412) do
+ActiveRecord::Schema.define(version: 20141217212208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: true do |t|
+    t.string   "street"
+    t.string   "street_two"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "genres", force: true do |t|
     t.string   "name",       limit: 255
@@ -108,6 +118,13 @@ ActiveRecord::Schema.define(version: 20141204161412) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_digest"], name: "index_users_on_remember_digest", using: :btree
+
+  create_table "venues", force: true do |t|
+    t.string   "name"
+    t.integer  "address_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "youtubes", force: true do |t|
     t.string   "playlist",   limit: 255
