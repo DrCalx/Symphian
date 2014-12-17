@@ -13,8 +13,6 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
-		debugger
-		@suers = User.starts_with(params[:starts_with])
 	end
 
 	def new

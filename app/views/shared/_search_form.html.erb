@@ -1,6 +1,10 @@
-<form id="search-form" class="navbar-form navbar-right" role="search">
+<%= form_tag( search_path, { method:"get", 
+                                                            role: "search", 
+                                                            class: "navbar-form", 
+                                                            id:"search-form"}) do %>
   <div class="form-group">
-    <input id="search-box" name="starts_with" type="text" class="form-control" placeholder="Search">
+    <%= text_field_tag 'starts_with', nil, { 	:class => "form-control", 
+                                          :placeholder => "Search",
+                                          :id => "search-box" }%>
   </div>
-</form>
-<div class="search-results"></div>
+<% end %>
