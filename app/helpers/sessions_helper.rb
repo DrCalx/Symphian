@@ -16,6 +16,10 @@ module SessionsHelper
 	def current_user=(user)
 		@current_user = user
 	end
+	
+	def admin?
+		current_user.name == "Matthew Example"
+	end
 
 	def current_user
 		if (user_id = session[:user_id])
