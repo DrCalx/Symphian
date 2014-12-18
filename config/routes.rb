@@ -4,6 +4,7 @@ Symphian::Application.routes.draw do
   resources :instruments, only: [:index]
   resources :sessions, only: [:new, :create, :destroy]
   resources :openings, only: [:create, :destroy]
+  resources :venues
   resources :groups do
     member do
       get :members

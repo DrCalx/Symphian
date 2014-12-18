@@ -1,0 +1,13 @@
+<% provide(:title, 'New Venue') %>
+<h1>Create a Venue</h1>
+
+<div class="row">
+	<div class="col-xs-6 col-md-offset-3">
+		<%= form_for(@venue) do |f| %>
+			<%= f.label :name %>
+			<%= f.text_field :name, class: "form-control" %>
+
+			<%= f.submit "Create Venue", class: "btn btn-primary"%>
+		<% end %>
+	</div>
+</div>

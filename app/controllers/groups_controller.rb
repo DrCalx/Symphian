@@ -1,4 +1,8 @@
 class GroupsController < ApplicationController
+	def new
+		@group = Group.new
+	end
+	
 	def show
 		@group = Group.find(params[:id])
 		@opening = @group.openings.build
