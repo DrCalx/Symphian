@@ -17,6 +17,12 @@ class VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
   end
   
+  def destroy
+    Venue.find(params[:id]).destroy
+    flash[:success] = "Venue Destroyed"
+    redirect_to request.referrer
+  end
+  
   private
   def venue_params
     params.require(:venue).permit(:name)

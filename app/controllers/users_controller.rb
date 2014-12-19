@@ -38,6 +38,12 @@ class UsersController < ApplicationController
 
 	def settings
 	end
+	
+	def destroy
+		User.find(params[:id]).destroy
+		flash[:success] = "user terminated"
+		redirect_to dash_url
+	end
 
 	private 
 		def user_params

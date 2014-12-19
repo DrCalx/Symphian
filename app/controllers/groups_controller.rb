@@ -28,6 +28,12 @@ class GroupsController < ApplicationController
 		@group.update_attributes(group_params)
 		redirect_to @group
 	end
+	
+	def destroy
+		Group.find(params[:id]).destroy
+		flash[:success] = "Group Destroyed"
+		redirect_to request.referrer
+	end
 
 	private
 
