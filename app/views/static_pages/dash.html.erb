@@ -1,3 +1,4 @@
+<% if current_user.admin? %>
 <div class="row">
   <div class="col-md-4">
     Users <%= link_to "Add", 'users/new', class: "btn btn-xs btn-primary" %>
@@ -18,3 +19,6 @@
     <% end %>
   </div>
 </div>
+<% else %>
+  <h1>NOPE</h1>
+<% end %>

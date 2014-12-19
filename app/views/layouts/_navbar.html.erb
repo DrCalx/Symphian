@@ -6,7 +6,7 @@
 				<%= link_to "Log Out", signout_path, :method => "delete", :class => "btn btn-md btn-primary" %>
 				<%= link_to "Edit Profile", current_user, :class => "btn btn-md btn-default" %>
 				<%= link_to "Home Page", root_path, :class => "btn btn-md btn-default" %>
-				<% if admin? %>
+				<% if current_user.admin? %>
 					<%= link_to "Dash", dash_path, :class => "btn btn-md btn-danger" %>
 				<% end %>
 			<% else %>
