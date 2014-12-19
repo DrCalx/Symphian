@@ -3,6 +3,17 @@ class GroupsController < ApplicationController
 		@group = Group.new
 	end
 	
+	def create
+		@group = Group.new(group_params)
+		if @group.save
+			flash[:success] = "Congrats on the new group"
+			redirect_to @group
+		else
+			flash[:error] = "Couldn't create group"
+			render 'new'
+		end
+	end
+	
 	def show
 		@group = Group.find(params[:id])
 		@opening = @group.openings.build
@@ -21,7 +32,7 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:group).permit(	:bio, 
+		params.require(:group).permit(	:name, :bio, 
 			:zip,
 			:member_ids => [], 
 			:genre_ids => [], 
