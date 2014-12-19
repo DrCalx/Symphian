@@ -2,19 +2,19 @@
   <div class="col-md-4">
     Users <%= link_to "Add", 'users/new', class: "btn btn-xs btn-primary" %>
     <% User.all.each do |u| %>
-      <li><%= link_to u.name, u%></li>
+      <li><%= link_to "delete", u, method: :delete %> | <%= link_to u.name, u%></li>
     <% end %>
   </div>
   <div class="col-md-4">
     Venues <%= link_to "Add", 'venues/new', class: "btn btn-xs btn-primary" %>
     <% Venue.all.each do |v| %>
-      <li><%= link_to v.name, v %></li>
+      <li><%= link_to "delete", v, method: :delete %> | <%= link_to v.name, v %></li>
     <% end %>
   </div>
   <div class="col-md-4">
     Groups <%= link_to "Add", 'groups/new', class: "btn btn-xs btn-primary" %>
     <% Group.all.each do |g| %>
-      <li><%= link_to g.name, g %></li>
+      <li><%= link_to "delete", g, method: :delete %> | <%= link_to g.name, g %></li>
     <% end %>
   </div>
 </div>
