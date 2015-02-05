@@ -51,6 +51,8 @@
 		<h2>This is the <a href='#'>musician</a>'s network</h2>
 		<%= link_to "Sign me up", signup_path, class: "btn btn-primary" %>
 		<%= link_to "Sign me in", signin_path, class: "btn btn-success" %>
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 	</div>
 	<div class="center jumbotron">
 		<h1>Check The News</h1>

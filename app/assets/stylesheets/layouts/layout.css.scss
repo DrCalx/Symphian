@@ -1,5 +1,7 @@
-$brand-primary: #3E3E42;
 
+@import "bootstrap/variables";
+$navbar-height: 65px;
+$navbar-default-bg: #000;
 @import "bootstrap";
 
 @import "body";
@@ -11,6 +13,7 @@ $brand-primary: #3E3E42;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 
 html {
 	overflow-y: scroll;
@@ -29,18 +32,11 @@ body {
 }
 
 #logo {
-	width: 30%;
-	height: auto;
+	margin-top: 7px;
 	float: left;
 	margin-right: 10px;
 	margin-left: 10px;
-	font-size: 1.7em;
-	text-transform: capitalize;
 	color: $gray-lighter;
-	padding-top: 11px;
-	line-height: 1;
-	letter-spacing: -1px;
-	font-weight: normal;
 	background-color: #222;
 	&:hover {
 		text-decoration:none;

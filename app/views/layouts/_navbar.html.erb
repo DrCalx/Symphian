@@ -1,21 +1,26 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-		<%= link_to image_tag("nav_ban_symphian_2.jpg", alt:"Symphian", class: "logo"), root_path %> 
-		<ul class="nav navbar-nav navbar-right">
-			<% if signed_in? %>
-				<%= link_to "Log Out", signout_path, :method => "delete", :class => "btn btn-md btn-primary" %>
-				<%= link_to "Edit Profile", current_user, :class => "btn btn-md btn-default" %>
-				<%= link_to "Home Page", root_path, :class => "btn btn-md btn-default" %>
-				<% if current_user.admin? %>
-					<%= link_to "Dash", dash_path, :class => "btn btn-md btn-danger" %>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-items">...</button>
+			<%= link_to image_tag("nav_ban_symphian_2.jpg", alt:"Symphian", id: "logo"), root_path %> 
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-items">
+			<ul class="nav navbar-nav navbar-right">
+				<% if signed_in? %>
+					<li><%= button_to "Log Out", signout_path, :method => "delete", :class => "btn btn-md btn-primary navbar-btn" %></li>
+					<li><%= button_to "Edit Profile", current_user, :class => "btn btn-md btn-default navbar-btn" %></li>
+					<li><%= button_to "Home Page", root_path, :class => "btn btn-md btn-default navbar-btn" %></li>
+					<% if current_user.admin? %>
+						<li><%= button_to "Dash", dash_path, :class => "btn btn-md btn-danger navbar-btn" %></li>
+					<% end %>
+				<% else %>
+					<li><%= button_to "Sign me in", signin_path, class: "btn btn-success navbar-btn" %></li>
+					<li><%= button_to "Sign me up", signup_path, class: "btn btn-primary navbar-btn" %></li>
 				<% end %>
-			<% else %>
-				<%= link_to "Sign me in", signin_path, class: "btn btn-success" %>
-				<%= link_to "Sign me up", signup_path, class: "btn btn-primary" %>
-			<% end %>
-		</ul>
-		<div class="navbar-right">
-			<%= render "shared/search_form" %>
+			</ul>
+			<div class="navbar-right">
+				<%= render "shared/search_form" %>
+			</div>
 		</div>
 	</div>
 </nav>
