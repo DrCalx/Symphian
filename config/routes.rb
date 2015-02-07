@@ -25,6 +25,9 @@ Symphian::Application.routes.draw do
   match '/soundcloud/connect',    to: 'soundcloud#connect',     via: 'get'
   match '/soundcloud/connected',  to: 'soundcloud#connected',   via: 'get'
   match '/soundcloud/disconnect', to: 'soundcloud#disconnect',  via: 'get'
+  
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure',            to: redirect('/')
 
   match '/youtube', to: 'youtube#update', via: 'patch'
 

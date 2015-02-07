@@ -17,6 +17,12 @@
 					<li><%= button_to "Sign me in", signin_path, class: "btn btn-success navbar-btn" %></li>
 					<li><%= button_to "Sign me up", signup_path, class: "btn btn-primary navbar-btn" %></li>
 				<% end %>
+				
+				<% if fb_signin? %>
+					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+				<% else %>
+					<button script="FB.logout(function(response){});">LogOut</button>
+				<% end %>
 			</ul>
 			<div class="navbar-right">
 				<%= render "shared/search_form" %>
