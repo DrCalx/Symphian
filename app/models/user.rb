@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
 			user.uid = auth.uid
 			#user.oauth_token = auth.oauth_token
 			user.provider = auth.provider
+			user.pic = auth.info.image
 			user.save!
 		end
 	end
