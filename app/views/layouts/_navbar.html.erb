@@ -19,7 +19,8 @@
 				<% end %>
 				
 				<% if fb_signin? %>
-					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+					<!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>-->
+					<li><%= button_to "Login with Facebook", "/auth/facebook", class: "btn btn-default navbar-btn" %></li>
 				<% else %>
 					<button script="FB.logout(function(response){});">LogOut</button>
 				<% end %>

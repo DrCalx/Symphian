@@ -23,6 +23,7 @@ group :development, :test do
 	gem 'spring', 	'1.1.3'
 	gem 'byebug', 	'3.4.0'
 	gem 'web-console', 	'2.0.0.beta3'
+	gem 'quiet_assets'
 end
 
 group :test do
