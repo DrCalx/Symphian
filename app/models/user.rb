@@ -29,7 +29,14 @@ class User < ActiveRecord::Base
 	
 	scope :starts_with, ->(name) { where("UPPER(name) like ?", "#{name.upcase}%") }
 	
-
+	#-----------------Facebook Auth ----------------
+	
+	def self.from_omniauth(auth)
+		where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+			
+		end
+	end
+	
 	#------------------ Groups ---------------------
 
 	def sign_with!(group)
