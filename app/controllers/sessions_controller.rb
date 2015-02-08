@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		if params[:provider]
-			flash[:warning]="sign in with facebook lol"
+		if params[:provider] #Use external auth (facebook, google, etc.)
 			user = User.from_omniauth(env["omniauth.auth"])
-			render 'new'
+			sign_in user
+			redirect_to user
 		else
 			user = User.find_by(email: params[:session][:email].downcase)
 			if user && user.authenticate(params[:session][:password])

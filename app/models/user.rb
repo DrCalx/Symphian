@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
 	before_create { create_remember_token }
 	before_save { self.email = email.downcase }
 	validates :name, 	presence: true, 
@@ -19,9 +20,9 @@ class User < ActiveRecord::Base
 
 	has_and_belongs_to_many :genres
 
-	has_secure_password #Thanks Rails!
-	validates :password, length: { minimum: 6 }, 
-												on: :create
+	#has_secure_password #Thanks Rails!
+	#validates :password, length: { minimum: 6 }, 
+	#											on: :create
 
 	has_one :youtube, dependent: :destroy
 	
@@ -33,7 +34,12 @@ class User < ActiveRecord::Base
 	
 	def self.from_omniauth(auth)
 		where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-			
+			user.name = auth.info.name
+			user.email = auth.info.email
+			user.uid = auth.uid
+			#user.oauth_token = auth.oauth_token
+			user.provider = auth.provider
+			user.save!
 		end
 	end
 	
