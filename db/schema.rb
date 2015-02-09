@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209171647) do
+ActiveRecord::Schema.define(version: 20150209193811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150209171647) do
   end
 
   create_table "genres", force: true do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,28 +43,28 @@ ActiveRecord::Schema.define(version: 20150209171647) do
   end
 
   create_table "groups", force: true do |t|
-    t.string   "name",       limit: 255
-    t.string   "zip",        limit: 255
+    t.string   "name"
+    t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "bio",        limit: 255
+    t.string   "bio"
   end
 
   create_table "instruments", force: true do |t|
-    t.string   "name",       limit: 255
-    t.string   "category",   limit: 255
+    t.string   "name"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "listing_types", force: true do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "listings", force: true do |t|
-    t.string   "title",           limit: 255
+    t.string   "title"
     t.text     "description"
     t.integer  "listing_type_id"
     t.datetime "created_at"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20150209171647) do
   create_table "openings", force: true do |t|
     t.integer  "group_id"
     t.integer  "instrument_id"
-    t.string   "zip",           limit: 255
+    t.string   "zip"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -107,9 +107,9 @@ ActiveRecord::Schema.define(version: 20150209171647) do
 
   create_table "user_auth_symphians", force: true do |t|
     t.integer  "user_id"
+    t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "password_digest"
   end
 
   add_index "user_auth_symphians", ["user_id"], name: "index_user_auth_symphians_on_user_id", using: :btree
@@ -122,20 +122,20 @@ ActiveRecord::Schema.define(version: 20150209171647) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name",                     limit: 255
-    t.string   "email",                    limit: 255
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest",          limit: 255
-    t.string   "remember_digest",          limit: 255
+    t.string   "password_digest"
+    t.string   "remember_digest"
     t.text     "bio"
-    t.string   "zip",                      limit: 255
+    t.string   "zip"
     t.integer  "soundcloud_user_id"
-    t.string   "soundcloud_username",      limit: 255
-    t.string   "soundcloud_access_token",  limit: 255
-    t.string   "soundcloud_refresh_token", limit: 255
+    t.string   "soundcloud_username"
+    t.string   "soundcloud_access_token"
+    t.string   "soundcloud_refresh_token"
     t.datetime "soundcloud_expires_at"
-    t.boolean  "admin",                                default: false
+    t.boolean  "admin",                    default: false
     t.string   "provider"
     t.string   "uid"
     t.string   "pic"
@@ -152,7 +152,7 @@ ActiveRecord::Schema.define(version: 20150209171647) do
   end
 
   create_table "youtubes", force: true do |t|
-    t.string   "playlist",   limit: 255
+    t.string   "playlist"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

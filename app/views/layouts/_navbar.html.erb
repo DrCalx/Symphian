@@ -17,8 +17,8 @@
 						<li><%= button_to "Dash", dash_path, :class => "btn btn-md btn-danger navbar-btn" %></li>
 					<% end %>
 				<% else %>
-					<li><%= button_to "Sign me in", signin_path, class: "btn btn-success navbar-btn" %></li>
-					<li><%= button_to "Sign me up", signup_path, class: "btn btn-primary navbar-btn" %></li>
+					<li><%= button_to "Sign me in", signin_path, class: "btn btn-success navbar-btn", method: :get %></li>
+					<li><%= button_to "Sign me up", signup_path, class: "btn btn-primary navbar-btn", method: :get %></li>
 				<% end %>
 			</ul>
 		</div>

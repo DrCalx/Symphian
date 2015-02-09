@@ -23,10 +23,6 @@ class User < ActiveRecord::Base
 	
 	has_and_belongs_to_many :genres
 
-	has_secure_password #Thanks Rails!
-	#validates :password, length: { minimum: 6 }, 
-	#											on: :create
-
 	has_one :youtube, dependent: :destroy
 	
 	attr_accessor :remember_token

@@ -16,7 +16,7 @@ Symphian::Application.routes.draw do
   get 'search', to: 'search#show'
   
   match '/about',     to: 'static_pages#about', via: 'get'
-  match '/signup',    to: 'users#new',          via: 'get'
+  get '/signup',    to: 'users#new'
   match '/signin',    to: 'sessions#new',       via: 'get'
   match '/signin',    to: 'sessions#create',    via: 'post'
   match '/signout',   to: 'sessions#destroy',   via: 'delete'
