@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
 	has_many :listings, dependent: :destroy
 	
 	has_one :auth_facebook, class_name: "User::Auth::Facebook", dependent: :destroy
-
+	has_one :auth_symphian, class_name: "User::Auth::Symphian", dependent: :destroy
+	
 	has_and_belongs_to_many :genres
 
 	has_secure_password #Thanks Rails!
