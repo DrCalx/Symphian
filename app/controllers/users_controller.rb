@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
+		@user.build_auth_symphian
 	end
 
 	def create
@@ -48,6 +49,6 @@ class UsersController < ApplicationController
 	private 
 		def user_params
 			#params is passed in via the form. We need to insure only the correct hash values are present
-			params.require(:user).permit(:name, :email, :password, :password_confirmation, :zip, :bio, :instrument_ids => [], :genre_ids => [])
+			params.require(:user).permit(:name, :email, :zip, :bio, :instrument_ids => [], :genre_ids => [], auth_symphian_attributes: [:password, :password_confirmation])
 		end
 end

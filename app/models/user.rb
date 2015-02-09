@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 	
 	has_one :auth_facebook, class_name: "User::Auth::Facebook", dependent: :destroy
 	has_one :auth_symphian, class_name: "User::Auth::Symphian", dependent: :destroy
+	accepts_nested_attributes_for :auth_symphian
 	
 	has_and_belongs_to_many :genres
 
