@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
 	has_many :instruments, through: :user_played_instruments
 
 	has_many :listings, dependent: :destroy
+	
+	has_one :auth_facebook, class_name: "User::Auth::Facebook", dependent: :destroy
 
 	has_and_belongs_to_many :genres
 
@@ -33,17 +35,18 @@ class User < ActiveRecord::Base
 	#-----------------Facebook Auth ----------------
 	
 	def self.from_omniauth(auth)
-		user 
-		where(auth.slice(:email)) do |user|
-			#it looks like we already have an account with this email. Is this you? Log into your Symphian account to link to Facebook.
-		end
+		
+		#refactor to Auth::Facebook
 			
-		where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+			
+		where(auth.info.slice(:email)).first_or_initialize.tap do |user|
 			user.name = auth.info.name
 			user.email = auth.info.email
-			user.uid = auth.uid
-			#user.oauth_token = auth.oauth_token
-			user.provider = auth.provider
+			user.auth_facebook = Auth::Facebook.where(auth.slice(:uid)).first_or_initialize do |user_auth|
+				user_auth.uid = auth.uid
+				user_auth.oauth_token = auth.oauth_token
+				user_auth.provider = auth.provider
+			end
 			user.pic = auth.info.image
 			user.save!
 		end

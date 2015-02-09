@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208201747) do
+ActiveRecord::Schema.define(version: 20150209162152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,18 @@ ActiveRecord::Schema.define(version: 20150208201747) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "user_auth_facebooks", force: true do |t|
+    t.integer  "user_id"
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "user_auth_facebooks", ["user_id"], name: "index_user_auth_facebooks_on_user_id", using: :btree
 
   create_table "user_played_instruments", force: true do |t|
     t.integer  "user_id"
