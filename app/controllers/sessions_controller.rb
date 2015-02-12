@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 		if params[:provider] #Use external auth (facebook, google, etc.)
 			user = User.from_omniauth(env["omniauth.auth"])
 			sign_in user
+			remember user
 			redirect_to user
 		else
 			user = User.find_by(email: params[:session][:email].downcase)

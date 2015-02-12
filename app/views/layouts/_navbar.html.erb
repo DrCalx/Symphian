@@ -8,8 +8,8 @@
 			<ul class="nav navbar-nav navbar-right">
 				<% if signed_in? %>
 					<li><%= button_to "Log Out", signout_path, :method => "delete", :class => "btn btn-md btn-primary navbar-btn" %></li>
-					<li><%= button_to "Edit Profile", current_user, :class => "btn btn-md btn-default navbar-btn" %></li>
-					<li><%= button_to "Home Page", root_path, :class => "btn btn-md btn-default navbar-btn" %></li>
+					<li><%= button_to "Edit Profile", current_user, :class => "btn btn-md btn-default navbar-btn", method: :get%></li>
+					<li><%= button_to "Home Page", root_path, :class => "btn btn-md btn-default navbar-btn", method: :get%></li>
 					<div class="navbar-right">
 						<%= render "shared/search_form" %>
 					</div>
