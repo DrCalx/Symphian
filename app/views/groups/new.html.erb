@@ -6,6 +6,9 @@
 		<%= form_for(@group) do |f| %>
 			<%= f.label :name %>
 			<%= f.text_field :name, class: "form-control" %>
+			
+			<%= f.label :bio %>
+			<%= f.textarea :bio, class: "form-control" %>
 
 			<%= f.submit "Create Group", class: "btn btn-primary"%>
 		<% end %>
