@@ -46,15 +46,7 @@
 				<%= render @group.members %>
 			</div>
 
-			<div class="bio_block">
-				<h3>Openings</h3>
-				<% if manager?(@user) %>
-					<%= render "edit_opening" %>
-				<% end %>
-				<% @group.openings.each do |opening| %>
-					<%= render opening %> | <%= link_to "delete", opening, method: :delete %>
-				<% end %>
-			</div>
+			<!%= render "openings" %>
 
 			<div class="bio_block">
 				<h3>Genre</h3>

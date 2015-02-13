@@ -11,13 +11,10 @@
 			<%= form_for @opening do |o| %>
 				<%= o.hidden_field :group_id, :value => @group.id %>
 				<%= o.hidden_field :zip, :value => @group.zip %>
-				<%= o.collection_select :instrument_id, Instrument.all, :id, :name %>
+				<%= #o.collection_select :instrument_id, Instrument.all, :id, :name %>
 				<%= o.text_area :description %>
 				<%= o.submit "Create", :class => "btn btn-primary" %>
 			<% end %>
-			</div>
-			<div class="modal-footer">
-				
 			</div>
 		</div>
 	</div>
