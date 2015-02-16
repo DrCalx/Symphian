@@ -1,22 +1,15 @@
 <% provide(:title, @group.name) %>
-<h1><%= @group.name %></h1>
+<div class="row">
+	<div class="col-md-12 group-title">
+		<h1><%= @group.name %></h1>
+		<p><%= @group.bio %></p>
+	</div>
+</div>
 <div class="row">
 	<div class="col-md-4">
-		<section>
-			<h1><%= @group.name %></h1>
-			<h2>Group page.</h2>
-		</section>
-		<% if manager?(@user) %>
-		<section>
-			<h3>What can I do here?</h3>
-			<h4>Create a group bio.</h4>
-			<h4>Add new members</h4>
-			<h4>Add feature such as genre and needed talents</h4>
-			<h4>Only a manager can edit properties of a group - but anyone can be added as a manager</h4>
-		</section>
-		<% end %>
+		<h1>Soundcloud</h1>
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-4">
 		<div class="profile">
 			<div class="bio_block">
 				<h3>Zip</h3>
@@ -30,21 +23,6 @@
 				<% end %>
 				<p><%= @group.zip %>
 			</div>
-			<div class="bio_block">
-				<h3>Bio</h3>
-				<% if manager?(@user) %>
-					<%= render "edit_bio" %>
-				<% end %>
-				<p><%= @group.bio %></p>
-			</div>			
-			
-			<div class="bio_block">
-				<h3>Members</h3>
-				<% if manager?(@user) %>
-					<%= render "edit_member" %>
-				<% end %>
-				<%= render @group.members %>
-			</div>
 
 			<!%= render "openings" %>
 
@@ -56,5 +34,9 @@
 				<%= render @group.genres %>
 			</div>
 		</div>
+	</div>
+	<div class="col-md-4 group-box">
+		<h1>Members</h1>
+		<%= render @group.members %>
 	</div>
 </div>
