@@ -17,7 +17,8 @@ gem 'turbolinks', 		'2.3.0'
 gem 'jbuilder', 			'2.2.3'
 gem 'faker', 					'1.4.2'
 gem 'arel', 					'6.0.0.beta2'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', 			'~> 2.0.0'
+gem 'omniauth-google-oauth2', '~> 0.2.6'
 
 group :development, :test do
 	gem 'spring', 	'1.1.3'
