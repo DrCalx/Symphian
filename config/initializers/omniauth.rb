@@ -3,12 +3,12 @@ OmniAuth.config.logger = Rails.logger
 Rails.application.config.middleware.use OmniAuth::Builder do
   
   provider  OmniAuth::Strategies::Facebook, 
-            ENV['FB_APP_ID'],
-            ENV['FB_APP_SECRET']
+            Rails.application.secrets.facebook_app_id,
+            Rails.application.secrets.facebook_app_secret
   
   provider  OmniAuth::Strategies::GoogleOauth2, 
-            ENV['GOOGLE_CLIENT_ID'], 
-            ENV['GOOGLE_CLIENT_SECRET'], 
+            Rails.application.secrets.google_client_id, 
+            Rails.application.secrets.google_client_secret, 
             {
               scope:        'calendar',
               access_type:  'offline'
