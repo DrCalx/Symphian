@@ -3,7 +3,11 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		if params[:provider] #Use external auth (facebook, google, etc.)
+		case params[:provider]
+		when "google_oauth2"
+			@auth = env["omniauth.auth"]["credentials"]
+			render 'google_oauth2'
+		when "facebook" #Use external auth (facebook, google, etc.)
 			user = User.from_omniauth(env["omniauth.auth"])
 			sign_in user
 			remember user
