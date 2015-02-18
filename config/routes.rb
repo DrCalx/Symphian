@@ -26,6 +26,9 @@ Symphian::Application.routes.draw do
   match '/soundcloud/connected',  to: 'soundcloud#connected',   via: 'get'
   match '/soundcloud/disconnect', to: 'soundcloud#disconnect',  via: 'get'
   
+  
+  # BIG TODO!! These auth functions should call into an auth controller
+  #   with the idea being to seperate auth from session
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure',            to: redirect('/')
 

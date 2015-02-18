@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 	
 	has_one :auth_facebook, class_name: "User::Auth::Facebook", dependent: :destroy
 	has_one :auth_symphian, class_name: "User::Auth::Symphian", dependent: :destroy
+	has_one :auth_google, 	class_name: "User::Auth::Google", 	dependent: :destroy
+	
 	accepts_nested_attributes_for :auth_symphian
 	
 	has_and_belongs_to_many :genres
@@ -29,6 +31,18 @@ class User < ActiveRecord::Base
 	attr_accessor :remember_token
 	
 	scope :starts_with, ->(name) { where("UPPER(name) like ?", "#{name.upcase}%") }
+	
+	#---------------Google auth --------------------
+	
+	def google_creds(auth)
+		self.auth_google = Auth::Google.where(user: id).first_or_initialize do |goog|
+			goog.token = auth.token
+			goog.refresh_token = auth.refresh_token
+			goog.expires_at = auth.expires_at
+			goog.expires = auth.expires
+		end
+		save!
+	end
 	
 	#-----------------Facebook Auth ----------------
 	
