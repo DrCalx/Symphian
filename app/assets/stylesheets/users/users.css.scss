@@ -1,0 +1,9 @@
+ul.users {
+  list-style: none;
+  
+  li {
+    overflow: auto;
+    padding: 10px 0px;
+    border-bottom: 1px solid #2B2B2B;
+  }
+}

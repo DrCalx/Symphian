@@ -9,7 +9,9 @@
 	<div class="col-md-4">
 		<div class="bio_block">
 			<h1>Members</h1>
-			<%= render @group.members %>
+			<ul class="users">
+				<%= render @group.members %>
+			</ul>
 		</div>
 		
 		<div class="bio_block">
@@ -48,13 +50,7 @@
 
 			<!%= render "openings" %>
 
-			<div class="bio_block">
-				<h3>Genre</h3>
-				<% if manager?(@user) %>
-					<%= render "edit_genre" %>
-				<% end %>
-				<%= render @group.genres %>
-			</div>
+			<!%= render "genres" %>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,7 @@
+			<div class="bio_block">
+				<h3>Genre</h3>
+				<% if manager?(@user) %>
+					<%= render "edit_genre" %>
+				<% end %>
+				<%= render @group.genres %>
+			</div>
