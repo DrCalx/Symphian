@@ -7,17 +7,30 @@
 </div>
 <div class="row">
 	<div class="col-md-4">
-		<h1>Soundcloud</h1>
-		<div class="bio_block"><%= render "soundcloud/soundcloud" %></div>
+		<div class="bio_block">
+			<h1>Members</h1>
+			<%= render @group.members %>
+		</div>
+		
+		<div class="bio_block">
+			<h1>Soundcloud</h1>
+			<%= render "soundcloud/soundcloud" %>
+		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-8">
 		<div class="profile">
 			<div class="bio_block">
-				<h3>Calendar</h3>
-				<% if manager?(@user) %>
-					<p>Symphian uses Google Calendar for all it's awesome functionality.</p>
-					<p>Connect your Google account to start using this feature.</p>
-					<%= link_to 'Google Auth', '/auth/google_oauth2' %>
+				<h2>Events</h2>
+				<% if current_user.auth_google %>
+					<iframe src="https://www.google.com/calendar/embed?title=Symphian%20-%20Heat%20Factor%20Zero&amp;showTitle=0&amp;showCalendars=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23F2F2F3&amp;src=8b8ihbckli35gbrt9s7srmrh38%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=America%2FNew_York" style=" border-width:0 " width="750" height="600" frameborder="0" scrolling="no"></iframe>
+				<% else %>
+					<% if manager?(@user) %>
+						<p>Symphian uses Google Calendar for all it's awesome functionality.</p>
+						<p>Connect your Google account to start using this feature.</p>
+						<%= link_to 'Google Auth', '/auth/google_oauth2' %>
+					<% else %>
+						<p>A manager must set up this account to work with Google Calendar</p>
+					<% end %>
 				<% end %>
 			</div>
 			
@@ -43,9 +56,5 @@
 				<%= render @group.genres %>
 			</div>
 		</div>
-	</div>
-	<div class="col-md-4 group-box">
-		<h1>Members</h1>
-		<%= render @group.members %>
 	</div>
 </div>
