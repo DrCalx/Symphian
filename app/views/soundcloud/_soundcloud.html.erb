@@ -1,0 +1,10 @@
+<div class="section_title row">
+	<div id="profile_soundcloud" class="col-md-12">
+		<% if sc_logged_in? %>
+			<%= link_to image_tag("btn-disconnect-m.png", :border => 0, :alt => "Disconnect from SoundCloud", class: "sndcld_btn"),soundcloud_disconnect_path, :class => "disconnect scbutton btn-edit" %>
+			<%= render "soundcloud/player" %>
+		<% else %>
+			<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud", class: "sndcld_btn"), soundcloud_connect_path, :class => "connect scbutton btn-edit" %>
+		<% end %>
+	</div>
+</div>
