@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 # 	seperate auth concerns from session concerns
 
 	def create
-		case params[:provider]
+		case params[:provider] || "symphian"
 		when "google_oauth2"
 			@auth = env["omniauth.auth"]["credentials"]
 			current_user.google_creds(@auth)
