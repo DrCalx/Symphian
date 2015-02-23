@@ -1,4 +1,6 @@
 Symphian::Application.routes.draw do
+  root 'static_pages#home'
+  
   resources :users
   resources :listings
   resources :instruments, only: [:index]
@@ -10,8 +12,6 @@ Symphian::Application.routes.draw do
       get :members
     end
   end
-
-  root 'static_pages#home'
   
   get 'search', to: 'search#show'
   
