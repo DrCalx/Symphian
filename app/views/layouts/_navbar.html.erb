@@ -6,7 +6,6 @@
 		</div>
 		<div class="collapse navbar-collapse" id="collapse-items">
 			<ul class="nav navbar-nav navbar-right">
-				<li><p><%= current_user.name %></p></li>
 				<li>
 					<!%= render "shared/search_form" %>
 				</li>
@@ -25,7 +24,7 @@
 								<li><%= link_to "Create a group", group_new_path %></li>
 							<% end %>
 							<li class="divider"></li>
-							<li><%= link_to "Sign Out", signout_path %> </li>
+							<li><%= link_to "Sign Out", signout_path, method: :delete %> </li>
 						</ul>
         	</li>
 
