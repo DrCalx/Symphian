@@ -3,7 +3,7 @@
 	<ul class="nav nav-tabs" role="tablist">
 		<li class="active"><a href="#local" role="tab" data-toggle="tab">Classifieds</a></li>
 		<li><a href="#myGroupFeed" role="tab" data-toggle="tab">My Groups</a></li>
-		<li><a href="#followedGroupFeed" role="tab" data-toggle="tab">Followed Groups</a></li>
+		<li><a href="#allGroups" role="tab" data-toggle="tab">All Groups</a></li>
 		<!--<li><a href="#regional" role="tab" data-toggle="tab">Regional</a></li>-->
 	</ul>
 	<div class="tab-content">
@@ -17,13 +17,16 @@
 		<div class="tab-pane" id="myGroupFeed">
 			<section class="listings">
 				<% if current_user.groups.any? %>
-					<ul>
-						<!--Show group feed here-->
-					</ul>
+					<%= render current_user.groups %>
 				<% else %>
 					<p>You are not a member of any groups yet!</p>
 					<p>Create or join a group to see status updates</p>
 				<% end %>
+			</section>
+		</div>
+		<div class="tab-pane" id="allGroups">
+			<section>
+				<%= render Group.all %>
 			</section>
 		</div>
 	</div>
