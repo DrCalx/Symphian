@@ -9,6 +9,8 @@ $navbar-default-bg: #000;
 @import "footer";
 @import "navbar";
 
+@import "shared/errors";
+
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;

@@ -21,7 +21,7 @@
 {name:"Flute", category:"Woodwind"},
 {name:"French Horn", category:"Woodwind"},
 ].each do |inst|
-	Instrument.find_or_create_by_name(inst)
+	Instrument.find_or_create_by(name: inst[:name])
 end
 
 [
@@ -68,7 +68,7 @@ end
 {name:"World"},
 {name:"Worship"},
 ].each do |genre|
-	Genre.find_or_create_by_name(genre)
+	Genre.find_or_create_by(name: genre[:name])
 end
 
 [
@@ -82,5 +82,5 @@ end
 {name:"Band"},
 {name:"Ensemble"},
 ].each do |type|
-	ListingType.find_or_create_by_name(type)
+	ListingType.find_or_create_by(name: type[:name])
 end

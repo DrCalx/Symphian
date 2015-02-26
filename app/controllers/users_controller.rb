@@ -33,11 +33,11 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		@user.update_attributes(user_params)
-		redirect_to @user
-	end
-
-	def settings
+		if @user.update_attributes(user_params)
+			redirect_to @user
+		else
+			render 'edit'
+		end
 	end
 	
 	def destroy
