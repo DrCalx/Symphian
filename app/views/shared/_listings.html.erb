@@ -1,8 +1,9 @@
-	<h3>Listings</h3>
+	<h3>Symphian Feed</h3>
 
 	<ul class="nav nav-tabs" role="tablist">
-		<li class="active"><a href="#global" role="tab" data-toggle="tab">Global</a></li>
-		<li><a href="#local" role="tab" data-toggle="tab">Local</a></li>
+		<li class="active"><a href="#local" role="tab" data-toggle="tab">Classifieds</a></li>
+		<li><a href="#myGroupFeed" role="tab" data-toggle="tab">My Groups</a></li>
+		<li><a href="#followedGroupFeed" role="tab" data-toggle="tab">Followed Groups</a></li>
 		<!--<li><a href="#regional" role="tab" data-toggle="tab">Regional</a></li>-->
 	</ul>
 	<div class="tab-content">
@@ -12,12 +13,17 @@
 					<%= render @listings %>
 				</ul>
 			</div>
-		</div>				
-		<div class="tab-pane" id="global">				
-			<div class="listings">
-				<ul>
-						<%= render @listings %>
-				</ul>
-			</div>
+		</div>
+		<div class="tab-pane" id="myGroupFeed">
+			<section class="listings">
+				<% if current_user.groups.any? %>
+					<ul>
+						<!--Show group feed here-->
+					</ul>
+				<% else %>
+					<p>You are not a member of any groups yet!</p>
+					<p>Create or join a group to see status updates</p>
+				<% end %>
+			</section>
 		</div>
 	</div>

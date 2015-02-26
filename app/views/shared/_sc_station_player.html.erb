@@ -1,0 +1,11 @@
+<h3>SoundCloud Radio</h3>
+<% if sc_logged_in? %>
+	<% if current_user.genres.count >= 1 %>
+	<p>Here's a song you might like:</p>
+	<%= render partial: "soundcloud/player", locals: {genreStation: true, player: @player} %>
+	<% else %>
+		<p>Update your profile and select your favorite genres to customize this station!</p>
+	<% end %>
+<% else %>
+	<p>Update your <%= link_to "profile", current_user %> with a SoundCloud account to hear music based on your preferences!</p>
+<% end %>

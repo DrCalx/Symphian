@@ -1,43 +1,17 @@
 
 <% if signed_in? %>
-	<div class="row welcome">
-		<div class="col-md-1">
-			<%= gravatar_for current_user %>	
-		</div>
-		<div class="col-md-5">
-			<h1><%= "#{current_user.name}" %></h1>
-			<h2>Home</h2>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-12 home_block">
-		</div>
-	</div>
-	
 	<div class="row">
 		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="soundcloud-stream home_block">
-						<h3>SoundCloud Radio</h3>
-						<% if sc_logged_in? %>
-							<p>Here's a song you might like:</p>
-							<%= render partial: "soundcloud/player", locals: {genreStation: true, player: @player} %>
-						<% else %>
-							<p>Update your <%= link_to "profile", current_user %> with a SoundCloud account to hear music based on your preferences!</p>
-						<% end %>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="home_block">
-						<h3>Music News</h3>
-						<%= render "feeds/feed" %>
-					</div>
-				</div>
-			</div>			
+			<section class="home_block user_info">
+				<%= render "shared/user_info" %>
+			</section>
+			<section class="home_block station_player">
+				<%= render "shared/sc_station_player" %>
+			</section>
+			<section class="home_block">
+				<h3>Music News</h3>
+				<%= render "feeds/feed" %>
+			</section>
 		</div>
 		<div class="col-md-8">
 			<div class="home_block">
