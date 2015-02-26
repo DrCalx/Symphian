@@ -2,7 +2,6 @@
 <div id="profile">
 	<div id="profile_header" class="bio_block row welcome">
 		<div class="col-md-1">
-			<%= image_tag @user.pic %>
 			<a href="http://gravatar.com/emails"><%= gravatar_for @user %></a>
 		</div>
 		<div class="col-md-4">			
@@ -17,18 +16,20 @@
 		</div>
 	</div> <!-- #profile_header -->
 	<div id="profile_body" class="row">
-		<div class="col-md-12">
-			<div class="bio_block"><%= render "intro" %></div>
+		<div class="col-md-5">
+			<section class="bio_block">
+				<%= render "intro" %>
+			</section>
+			<section class="bio_block">
+				<%= render "soundcloud/soundcloud" %>
+			</section>
+			<section class="bio_block">
+				<%= render "youtube/youtube_player" %>
+			</section>
 		</div>
-	</div>
-	<div id="profile_body" class="row">
-		<div id="profile_bio_col" class="col-md-5">			
-			<div class="bio_block"><%= render "soundcloud/soundcloud" %></div>
-			<div class="bio_block"><%= render "youtube/youtube_player" %></div>
-		</div> <!-- profile_bio_col -->
 		<div id="profile_social_col" class="col-md-7">			
 			<div class="bio_block"><%= render "groups" %></div>
 			<div class="bio_block"><%= render "listings" %></div>
 		</div> <!-- #profile_social_col -->
-	</div> <!-- #profile_body -->
+	</div>
 </div> <!-- #profile -->
