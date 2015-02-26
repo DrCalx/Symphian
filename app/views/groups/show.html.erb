@@ -23,7 +23,10 @@
 	<div class="col-md-8">
 		<div class="profile">
 			<div class="bio_block">
+				<section>
 				<h2>Events</h2>
+				</section>
+				<section>
 				<% if current_user.auth_google %>
 					<iframe src="https://www.google.com/calendar/embed?title=Symphian%20-%20Heat%20Factor%20Zero&amp;showTitle=0&amp;showCalendars=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23F2F2F3&amp;src=8b8ihbckli35gbrt9s7srmrh38%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=America%2FNew_York" style=" border-width:0 " width="750" height="600" frameborder="0" scrolling="no"></iframe>
 				<% else %>
@@ -35,6 +38,7 @@
 						<p>A manager must set up this account to work with Google Calendar</p>
 					<% end %>
 				<% end %>
+				</section>
 			</div>
 			
 			<div>

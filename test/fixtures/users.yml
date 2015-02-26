@@ -8,3 +8,33 @@ trudy:
   name: Trudy Norling
   email: trudy@example.com
   password_digest: <%= User.digest('Pass123') %>
+  
+dave:
+  name: Dave Bowman
+  email: dave@example.com
+  password_digest: <%= User.digest('Pass123') %>
+  
+frank:
+  name: Frank Poole
+  email: frank@example.com
+  password_digest: <%= User.digest('Pass123') %>
+  
+heywood:
+  name: Heywood Floyd
+  email: heywood@example.com
+  password_digest: <%= User.digest('Pass123') %>
+  
+andrei:
+  name: Andrei Smylsov
+  email: andrei@example.com
+  password_digest: <%= User.digest('Pass123') %>
+  
+ralph:
+  name: Ralph Halvorsen
+  email: ralph@example.com
+  password_digest: <%= User.digest('Pass123') %>
+  
+bill:
+  name: Bill Michaels
+  email: bill@example.com
+  password_digest: <%= User.digest('Pass123') %>
