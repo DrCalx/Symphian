@@ -9,7 +9,9 @@
 	<div class="col-md-4">
 		<div class="bio_block">
 			<h1>Members</h1>
-			<%= render "edit_member" %>
+			<% if member?(current_user) %>
+				<%= render "edit_member" %>
+			<% end %>
 			<ul class="users">
 				<%= render @group.members %>
 			</ul>
