@@ -7,3 +7,26 @@ ul.users {
     border-bottom: 1px solid #2B2B2B;
   }
 }
+
+table {
+  width: 100%;
+  empty-cells: show;
+  
+  tr td {
+    height: 25px;
+  
+  }
+  
+  td {
+    
+    text-align: left;
+  }
+  td.name{
+    width: 100px;
+  }
+  
+  td.edit_button{
+    text-align: center;
+    width: 40px;
+  }
+}

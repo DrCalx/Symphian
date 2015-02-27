@@ -1,41 +1,56 @@
 <div class="row">
 	<div class="col-md-12">
-		<dl>
-			<dt>Zip</dt>
-			<dd id="profile_zip">
-				<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
-					<%= form_for(@user) do |f| %>
-						<%= f.text_field :zip %>
-						<%= f.submit "Save changes", class: "btn btn-primary" %>
+		<table class="glance_table">
+			<tr>
+				<td class="edit_button">
+					<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
+						<%= form_for(@user) do |f| %>
+							<%= f.text_field :zip %>
+							<%= f.submit "Save changes", class: "btn btn-primary" %>
+						<% end %>
 					<% end %>
-				<% end %>
-				<%= @user.zip %>
-			</dd>
+				</td>
+				<td class="name">Zip:</td>
+				<td id="profile_zip">
+					<%= @user.zip %>
+				</td>
+			</tr>
 
-			<dt>Talents</dt>
-			<dd id="profile_instruments">
-				<%= render 	:layout => "shared/edit_modal", 
-										:locals => { 	:id => 'inst', 
-																	:title => 'Select Instruments'} do %>
-					<%= render "instruments/select" %>
-				<% end %>
-				<%= @user.instruments.map(&:name).join(", ") %>
-			</dd>
+			<tr>
+				<td class="edit_button">
+					<%= render 	:layout => "shared/edit_modal", 
+											:locals => { 	:id => 'inst', 
+																		:title => 'Select Instruments'} do %>
+						<%= render "instruments/select" %>
+					<% end %>
+				</td>
+				<td class="name">Instruments:</td>
+				<td>
+					<%= @user.instruments.map(&:name).join(", ") %>
+				</td>
+			</tr>
 
-			<dt>Genres</dt>
-			<dd id="profile_genres">
-				<%= render 	:layout => "shared/edit_modal", 
-										:locals => { 	:id => 'genre', 
-																	:title => 'Genres'} do %>
-					<%= render "genres/select" %>
-				<% end %>
-				<%= @user.genres.map(&:name).join(", ") %>
-			</dd>
+			<tr>
+				<td class="edit_button">
+					<%= render 	:layout => "shared/edit_modal", 
+											:locals => { 	:id => 'genre', 
+																		:title => 'Genres'} do %>
+						<%= render "genres/select" %>
+					<% end %>
+				</td>
+				<td class="name">Genres:</td>
+				<td>
+					<%= @user.genres.map(&:name).join(", ") %>
+				</td>
+			</tr>
 
-			<dt>Groups</dt>
-			<dd id="profile_groups">
-				<%= render @user.groups %>				
-			</dd>
-		</dl>
+			<tr>
+				<td class="edit_button"></td>
+				<td class="name">Groups:</td>
+				<td id="profile_groups">
+					<%= @user.groups.map(&:name).join(',') %>				
+				</td>	
+			</tr>
+		</table>
 	</div>
 </div>
