@@ -5,5 +5,5 @@
     <% end %>
 </section>
 <section>
-    <%= render current_user.groups.order(name: :asc) %>
+    <%= render @user.groups.order(name: :asc) %>
 </section>

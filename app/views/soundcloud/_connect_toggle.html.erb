@@ -1,0 +1,11 @@
+<% if current_user?(@user) %>
+  <% if sc_logged_in? %>
+  	<div style="text-align:center;">
+  	<%= link_to image_tag("btn-disconnect-m.png", :border => 0, :alt => "Disconnect from SoundCloud", class: "sndcld_btn"),soundcloud_disconnect_path, :class => "disconnect" %>
+  	</div>
+  <% else %>
+  	<div style="text-align:center;">
+  	<%= link_to image_tag("btn-connect-sc-m.png", :border => 0, :alt => "Connect With SoundCloud", class: "sndcld_btn"), soundcloud_connect_path, :class => "connect" %>
+  	</div>
+  <% end %>
+<% end %>

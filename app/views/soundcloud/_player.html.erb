@@ -10,5 +10,5 @@
 
 	<%= embed['html'].html_safe %>
 <% else %>
-	<div style="height:450px"><%= begin; current_user.embed_user_tracks['html'].html_safe; rescue => e; end %></div>
+	<div style="height:450px"><%= begin; @user.embed_user_tracks['html'].html_safe; rescue => e; end %></div>
 <% end %>
