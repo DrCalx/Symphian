@@ -7,10 +7,10 @@ class ListingsController < ApplicationController
 		@listing = current_user.listings.build(listing_params)
 		if @listing.save
 			flash[:success] = "New listing created!"
-			redirect_to current_user
 		else
 			flash[:error] = "Couldn't create listing."
 		end
+		redirect_to current_user
 	end
 
 	def update
@@ -21,7 +21,7 @@ class ListingsController < ApplicationController
 
 	private
 	def listing_params
-		params.require(:listing).permit(:title, :description, :user_id, :listing_type)
+		params.require(:listing).permit(:title, :description, :user_id, :listing_type_id)
 	end
 	
 		def ensure_correct_user
