@@ -17,7 +17,7 @@
 		<div class="tab-pane" id="myGroupFeed">
 			<section class="listings">
 				<% if current_user.groups.any? %>
-					<%= render current_user.groups %>
+					<%= render current_user.groups.order(name: :asc) %>
 				<% else %>
 					<p>You are not a member of any groups yet!</p>
 					<p>Create or join a group to see status updates</p>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="tab-pane" id="allGroups">
 			<section>
-				<%= render Group.all %>
+				<%= render Group.all.order(name: :asc) %>
 			</section>
 		</div>
 	</div>
