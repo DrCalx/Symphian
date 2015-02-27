@@ -10,7 +10,7 @@
 		<div class="tab-pane active" id="local">
 			<div class="listings">
 				<ul>
-					<%= render @listings %>
+					<%= render @listings.order(created_at: :desc) %>
 				</ul>
 			</div>
 		</div>
