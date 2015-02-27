@@ -1,4 +1,7 @@
+<section>
 <h2>Introduction</h2>
+</section>
+<section>
 <%= render :layout => "shared/edit_modal", :locals => {:title => 'Bio', :id => 'bio', :btn_text => "Write about yourself"} do %>
 	<%= form_for(@user) do |form| %>
 		<%= form.text_area :bio %>
@@ -6,3 +9,4 @@
 	<% end %>
 <% end %>	
 <p><%= @user.bio %></p>
+</section>
