@@ -1,6 +1,7 @@
 class Group < ActiveRecord::Base
 	has_many :memberships, dependent: :destroy
 	has_many :members, through: :memberships, source: :user
+	has_many :updates, dependent:destroy
 
 	has_many :openings, dependent: :destroy
 
