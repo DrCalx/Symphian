@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 	has_many :instruments, through: :user_played_instruments
 
 	has_many :listings, dependent: :destroy
+	has_many :updates
 	
 	has_one :auth_facebook, class_name: "User::Auth::Facebook", dependent: :destroy
 	has_one :auth_symphian, class_name: "User::Auth::Symphian", dependent: :destroy

@@ -22,3 +22,15 @@
     font-size: 30px;
   }
 }
+
+.updates {
+  max-height: 500px;
+  overflow-y: auto;
+  .form {
+    width: 50%;
+    float: left;
+  }
+  .list {
+    
+  }
+}

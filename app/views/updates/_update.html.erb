@@ -1,0 +1,11 @@
+<li class='update'>
+  <span class='group'>
+    <h3><%= link_to @group.name, @group %></h3>
+  </span>
+  <span class='body'>
+    <%= update.body %>
+  </span>
+  <span class='creator'>
+    <small type="time">Created by <%= link_to update.user.name, user_path(update.user) %> <%= time_ago_in_words(update.created_at) %> ago.</small>
+  </span>
+</li>

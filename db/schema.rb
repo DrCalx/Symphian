@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218225250) do
+ActiveRecord::Schema.define(version: 20150228205012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,17 @@ ActiveRecord::Schema.define(version: 20150218225250) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "updates", force: true do |t|
+    t.integer  "group_id"
+    t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "updates", ["group_id"], name: "index_updates_on_group_id", using: :btree
+  add_index "updates", ["user_id"], name: "index_updates_on_user_id", using: :btree
 
   create_table "user_auth_facebooks", force: true do |t|
     t.integer  "user_id"

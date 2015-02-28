@@ -1,0 +1,16 @@
+<div class="bio_block updates">
+	<div class="form">
+	<%= form_for @update do |u| %>
+		<%= hidden_field_tag :group_id, @group.id %>
+		<%= hidden_field_tag :user_id, current_user.id %>
+		<%= render 'shared/errors', object: u.object %>
+		<%= u.text_area :body, placeholder: "Group update...", class: "form-control" %>
+		<%= u.submit "Post new update", :class => "btn btn-md btn-primary" %>
+	<% end %>
+	</div>
+	<section>
+		<ul class="updates">
+			<%= render @updates %>
+		</ul>
+	</section>
+</div>

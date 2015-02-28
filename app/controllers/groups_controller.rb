@@ -18,6 +18,8 @@ class GroupsController < ApplicationController
 	def show
 		@group = Group.find(params[:id])
 		@opening = @group.openings.build
+		@updates = @group.updates
+		@update = Update.new
 	end
 
 	def index

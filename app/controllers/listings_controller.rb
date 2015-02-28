@@ -5,11 +5,13 @@ class ListingsController < ApplicationController
 	
 	def create
 		@listing = current_user.listings.build(listing_params)
+		byebug
 		if @listing.save
 			flash[:success] = "New listing created!"
 		else
 			flash[:error] = "Couldn't create listing."
 		end
+		byebug
 		redirect_to current_user
 	end
 

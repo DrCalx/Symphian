@@ -12,6 +12,7 @@ Symphian::Application.routes.draw do
       get :members
     end
   end
+  resources :updates
   
   get 'search', to: 'search#show'
   

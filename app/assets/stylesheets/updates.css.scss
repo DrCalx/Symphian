@@ -1,0 +1,16 @@
+ul.updates {
+  list-style: none;
+  
+  li.update {
+    padding-left: 10px;
+    
+    border-left: 1px solid;
+    border-top: 1px solid #e8e8e8;
+    
+    margin-bottom: 10px;
+    
+    .body {
+      display: block;
+    }
+  }
+}
