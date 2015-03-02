@@ -1,56 +1,59 @@
-<div class="row">
-	<div class="col-md-12">
-		<table class="glance_table">
-			<tr>
-				<td class="edit_button">
-					<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
-						<%= form_for(@user) do |f| %>
-							<%= f.text_field :zip %>
-							<%= f.submit "Save changes", class: "btn btn-primary" %>
-						<% end %>
+<table class="glance_table">
+	<tr>
+		<td class="edit_button">
+				<%= render :layout => "shared/edit_modal", :locals => {:title => 'Email'} do %>
+					<%= form_for(@user) do |f| %>
+						<%= f.text_field :email %>
+						<%= f.submit "Save changes", class: "btn btn-primary" %>
 					<% end %>
-				</td>
-				<td class="name">Zip:</td>
-				<td id="profile_zip">
-					<%= @user.zip %>
-				</td>
-			</tr>
-
-			<tr>
-				<td class="edit_button">
-					<%= render 	:layout => "shared/edit_modal", 
-											:locals => { 	:id => 'inst', 
-																		:title => 'Select Instruments'} do %>
-						<%= render "instruments/select" %>
+				<% end %>
+				<p>Email:</p>
+		</td>
+		<td id="profile_zip">
+			<%= @user.email %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="edit_button">
+				<%= render :layout => "shared/edit_modal", :locals => {:title => 'Zip'} do %>
+					<%= form_for(@user) do |f| %>
+						<%= f.text_field :zip %>
+						<%= f.submit "Save changes", class: "btn btn-primary" %>
 					<% end %>
-				</td>
-				<td class="name">Instruments:</td>
-				<td>
-					<%= @user.instruments.map(&:name).join(", ") %>
-				</td>
-			</tr>
+				<% end %>
+				<p>Zip:</p>
+		</td>
+		<td id="profile_zip">
+			<%= @user.zip %>
+		</td>
+	</tr>
 
-			<tr>
-				<td class="edit_button">
-					<%= render 	:layout => "shared/edit_modal", 
-											:locals => { 	:id => 'genre', 
-																		:title => 'Genres'} do %>
-						<%= render "genres/select" %>
-					<% end %>
-				</td>
-				<td class="name">Genres:</td>
-				<td>
-					<%= @user.genres.map(&:name).join(", ") %>
-				</td>
-			</tr>
+	<tr>
+		<td class="edit_button">
+			<%= render 	:layout => "shared/edit_modal", 
+									:locals => { 	:id => 'inst', 
+																:title => 'Select Instruments'} do %>
+				<%= render "instruments/select" %>
+			<% end %>
+			Instruments:
+		</td>
+		<td>
+			<%= @user.instruments.map(&:name).join(", ") %>
+		</td>
+	</tr>
 
-			<tr>
-				<td class="edit_button"></td>
-				<td class="name">Groups:</td>
-				<td id="profile_groups">
-					<%= @user.groups.map(&:name).join(',') %>				
-				</td>	
-			</tr>
-		</table>
-	</div>
-</div>
+	<tr>
+		<td class="edit_button">
+			<%= render 	:layout => "shared/edit_modal", 
+									:locals => { 	:id => 'genre', 
+																:title => 'Genres'} do %>
+				<%= render "genres/select" %>
+			<% end %>
+			Genres:
+		</td>
+		<td>
+			<%= @user.genres.map(&:name).join(", ") %>
+		</td>
+	</tr>
+</table>

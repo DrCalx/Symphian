@@ -1,9 +1,16 @@
 <% btn_text ||= 'edit' %>
+<% btn_icon ||= 'x' %>
 <% title ||= 'Edit' %>
 <% id ||= 'edit' %>
 
 <% if current_user?(@user) %>
-	<button id="edit_button" class="btn btn-xs btn-primary btn-edit" data-toggle="modal" data-target="#<%=id%>-modal"><%= btn_text %></button>
+	<button id="edit_button" class="btn btn-xs btn-primary btn-edit" data-toggle="modal" data-target="#<%=id%>-modal">
+		<% if btn_icon == 'x' %>
+			<div class="glyphicon glyphicon-edit" aria-hidden='true'></div>
+		<% else %>
+			<div class="glyphicon glyphicon-plus-sign" aria-hidden='true'></div>
+		<% end %>
+	</button>
 
 	<div class="modal fade" id="<%=id%>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">

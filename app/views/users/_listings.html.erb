@@ -1,9 +1,9 @@
 <div class="row">
 	<div class="col-md-12">
-		<h2>My Listings</h2>
-		<%= render :layout => "shared/edit_modal", :locals => {:title => 'New Listing', :id => 'listing', :btn_text => "Create a New Listing"} do %>
+		<%= render :layout => "shared/edit_modal", :locals => {:title => 'New Listing', :id => 'listing', btn_icon: "plus"} do %>
 			<%= render "listings/form" %>
 		<% end %>	
+		<h2>My Listings</h2>
 	</div>
 </div>
 

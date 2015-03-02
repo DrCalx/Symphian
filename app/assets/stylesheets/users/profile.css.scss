@@ -1,57 +1,60 @@
-#profile_header {	
-	margin-top: 0px;
-}
-
-.bio_block {
-	margin-top: 19px;
-	padding-bottom: 10px;
-	border-color:transparent;
-	border-style:solid;
-	border-width: 0px 0px 17px;
-	border-image: url(/assets/border-staff.png) 0 0 17 repeat;
-	/*margin-bottom: 28px;*/
-	h2 {
-		text-align: left;
-		float: left;
+#users-show {
+	#profile_header {	
 		margin-top: 0px;
-		margin-bottom: 15px;
-	} 
-}
-
-.btn-edit {
-	float: right;
-	margin-right: 50px;
-}
-
-dl {
-	width: 100%;
-}
-
-dt {
-	float:left;
-	width: 20%;
-	text-align: right;
-	padding: {
-		top: 3px;
-		bottom: 3px;
 	}
-}
-
-dd {
-	float: left;
-	width: 80%;
-	padding: {
-		top: 3px;
-		bottom: 3px;
-		left: 10px;
+	
+	.big-curly {
+		font-size: 7em;
+		margin-right: -18px;
 	}
-}
-
-.big-curly {
-	font-size: 7em;
-	margin-right: -18px;
-}
-
-.glance {
-	padding-top: 23px;
+	
+	.glance {
+		padding-top: 23px;
+	}
+	
+	.glance_table {
+		.btn-edit {
+			margin: 0px 5px 0px 0px !important;
+		}
+		p {
+			padding: 2px;
+			display: inline;
+		}
+		
+		td {
+			text-align: left;
+			padding: 2px 0px;
+		}
+		
+		table {
+			width: 100%;
+			empty-cells: show;
+		
+			td.name {
+				width: 100px;
+			}
+			
+			td.edit_button {
+				width: 40px;
+			}
+		}
+	}
+	
+	.bio_block {
+		.btn-edit {
+			float: left;
+			display: inline;
+			margin-right: 5px;
+			margin-top: 4px;
+		}
+	}
+	
+	.groups {
+		.btn-edit {
+			float: left;
+			display: inline;
+			margin-right: 5px;
+			margin-top: 4px;
+		}
+	}
 }
